@@ -32,12 +32,11 @@
 		<!--
 			Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
 		-->
-		<div class="main-header" data-background-color="green">
+		<div class="main-header" data-background-color="#9b2">
 			<!-- Logo Header -->
 			<div class="logo-header">
-				
-				<a href="dashboard" class="logo">Hoàn Mỹ CHC
-					{{-- <img src="{{asset('public/assets/img/logoazzara.svg')}}" alt="navbar brand" class="navbar-brand"> --}}
+				<a href="dashboard" class="logo">
+				<img src="{{asset('public/assets/img/logo-hoanmy.jpg')}}" alt="..." class="avatar-img rounded-circle">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -259,7 +258,7 @@
 									$user_name=Session::get('user_name');
 									echo $user_name;
 									 ?>
-									<span class="user-level">	<?php echo $user_mayte; ?></span>
+									<span class="user-level">	<?php echo'Mã y tế '. $user_mayte; ?></span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -296,14 +295,16 @@
 							</a>
 						</li>
 						<li class="nav-section">
+							
 							<span class="sidebar-mini-icon">
 								<i class="fa fa-ellipsis-h"></i>
 							</span>
 							<h4 class="text-section">Hồ sơ bệnh sử</h4>
+						
 						</li>
 						<li class="nav-item">
 						<a href="{{URL::to('/khambenh')}}">
-								<i class="fas fa-layer-group"></i>
+							<i class="fas fa-file-medical"></i>
 								<p>Khám bệnh</p>
 							
 							</a>
@@ -311,7 +312,7 @@
 						</li>
 						<li class="nav-item">
 							<a  href="{{URL::to('/tuvan')}}">
-								<i class="fas fa-pen-square"></i>
+								<i class="far fa-comment"></i>
 								<p>Tư vấn</p>
 							
 							</a>
@@ -319,7 +320,7 @@
 						</li>
 						<li class="nav-item">
 							<a href="{{URL::to('/xetnghiem')}}">
-								<i class="fas fa-table"></i>
+								<i class="fas fa-vial"></i>
 								<p>Xét nghiệm</p>
 						
 							</a>
@@ -327,7 +328,7 @@
 						</li>
 						<li class="nav-item">
 							<a href="{{URL::to('/chandoanhinhanh')}}">
-								<i class="fas fa-map-marker-alt"></i>
+								<i class="far fa-images"></i>
 								<p>Chẩn đoán hình ảnh</p>
 								{{-- <span class="caret"></span> --}}
 							</a>
@@ -353,7 +354,7 @@
 						</li>
 						<li class="nav-item">
 							<a  href="{{URL::to('/thuoc')}}">
-								<i class="far fa-chart-bar"></i>
+								<i class="fas fa-capsules"></i>
 								<p>Thuốc</p>
 								
 							</a>
@@ -386,7 +387,7 @@
 							<button type="button" class="changeMainHeaderColor" data-color="blue"></button>
 							<button type="button" class="changeMainHeaderColor" data-color="purple"></button>
 							<button type="button" class="changeMainHeaderColor" data-color="light-blue"></button>
-							<button type="button" class="selected changeMainHeaderColor" data-color="green"></button>
+							<button type="button" class="selected changeMainHeaderColor" data-color="#9b2"></button>
 							<button type="button" class="changeMainHeaderColor" data-color="orange"></button>
 							<button type="button" class="changeMainHeaderColor" data-color="red"></button>
 						</div>

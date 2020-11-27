@@ -2,18 +2,18 @@
 @section('content')
 <div class="row">
     <div class="col-sm-12 col-md-12">
-         <div class="table-agile-info">
-        <div class="panel panel-default">
-          <div class="panel-heading">
+   
+        
+        <div class="card-body caption-ketqua">
             KẾT QUẢ XÉT NGHIỆM
           </div>
- 
-          <div class="table-responsive table-wrapper">
-            <table class="table table-striped b-t b-light">
+          <div class="row row-card-no-pd">
+          <div class="table-responsive table-wrapper ">
+            <table  class="display table table-striped table-hover">
               <thead>
                 <tr>
-                    <th class="headXN" scope="col">BenhNhan_Id</th>
-                    <th class="headXN hide" scope="col">STT</th>
+                    {{-- <th class="headXN" scope="col">BenhNhan_Id</th>
+                    <th class="headXN hide" scope="col">STT</th> --}}
                   <th  class="headXN" scope="col">Tên xét nghiệm</th>
                   <th class="headXN" scope="col">Kết quả</th>
                   <th class="headXN" scope="col">Đơn vị tính</th>
@@ -46,8 +46,8 @@
                             <?php
                                 }  ?>
                             <tr>
-                                <td><span class="text-ellipsis">{{$kq->BenhNhan_Id}}</span></td>
-                                <td class="hide"><span class="text-ellipsis">{{$kq->STT}}</span></td>
+                                {{-- <td><span class="text-ellipsis">{{$kq->BenhNhan_Id}}</span></td>
+                                <td class="hide"><span class="text-ellipsis">{{$kq->STT}}</span></td> --}}
                                 <td><span class="text-ellipsis">{{$kq->NoiDung}}</span></td>
 
                                 <td><span class="text-ellipsis">
@@ -87,9 +87,10 @@
                 </ul>
               </div>
             </div>
+            </div>
           </footer>
-        </div>
-      </div>
+     
+     
     </div>
 </div>
 @endsection

@@ -28,7 +28,11 @@
         {{ csrf_field() }}
         <div class="wrapper wrapper-login">
             <div class="container container-login animated fadeIn">
-                <h3 class="text-center">Đăng nhập</h3>
+
+                <h1 class="h3 mb-3 font-weight-normal text-center">Khám định kỳ Hoàn Mỹ Đà Nẵng</h1>
+                {{-- <h3 class="text-center">Đăng nhập</h3> --}}
+
+
                 <?php
                     $message=Session::get('message');
                     if($message){
@@ -57,7 +61,7 @@
                         <a href="#" class="link float-right">Quên mật khẩu ?</a>
                     </div>
                     <div class="form-action mb-3">
-                        <input class="btn btn-primary btn-rounded btn-login" type="submit" value="Đăng nhập" name="login">
+                        <input class="btn btn-primary btn-rounded btn-login login" type="submit" value="Đăng nhập" name="login">
                         {{-- <a href="#" class="btn btn-primary btn-rounded btn-login">Đăng nhập</a> --}}
                     </div>
                 

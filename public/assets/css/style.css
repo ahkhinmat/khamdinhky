@@ -1,0 +1,34 @@
+.batthuong {
+	color: red !important;
+}
+.table-wrapper{
+    overflow-y: scroll;
+  height: 768px;
+}
+.headXN{
+background-color: white !important;
+color:black !important;
+}
+.table-wrapper th{
+    position: sticky;
+    top: 0;
+}
+.tengroup {
+    color:rgb(42, 56, 182) !important;
+    font-size: bold!important;
+}
+.tendichvu {
+    color:black !important;
+    font-size: bold!important;
+}
+.tennhomdichvu {
+    font-size: 22px !important;
+    color:rgb(196, 29, 29) !important;
+    text-transform: uppercase;
+    font-weight: bold!important;
+}
+.text-alert{
+color:red !important;
+text-align: center !important;
+width: 100% !important;
+}

@@ -1,8 +1,11 @@
 .batthuong {
 	color: red !important;
 }
+.avatar-img.rounded-circle.logo {
+	border-radius: 0% !important;
+}
 .main-header[data-background-color="#9b2"] {
-	background: #9b2 !important;
+	background: #79bc4b !important;
 }
 .btn.btn-primary.btn-rounded.btn-login.login {
     background-color: #9b2 !important;

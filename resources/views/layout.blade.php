@@ -36,7 +36,7 @@
 			<!-- Logo Header -->
 			<div class="logo-header">
 				<a href="dashboard" class="logo">
-				<img src="{{asset('public/assets/img/logo-hoanmy.jpg')}}" alt="..." class="avatar-img rounded-circle">
+				<img src="{{asset('public/assets/img/logo-hoanmy.jpg')}}" alt="..." class="avatar-img rounded-circle logo">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -74,7 +74,7 @@
 								<i class="fa fa-search"></i>
 							</a>
 						</li>
-						<li class="nav-item dropdown hidden-caret">
+						{{-- <li class="nav-item dropdown hidden-caret">
 							<a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="fa fa-envelope"></i>
 							</a>
@@ -143,8 +143,8 @@
 									<a class="see-all" href="javascript:void(0);">See all messages<i class="fa fa-angle-right"></i> </a>
 								</li>
 							</ul>
-						</li>
-						<li class="nav-item dropdown hidden-caret">
+						</li> --}}
+						{{-- <li class="nav-item dropdown hidden-caret">
 							<a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="fa fa-bell"></i>
 								<span class="notification">4</span>
@@ -201,7 +201,7 @@
 									<a class="see-all" href="javascript:void(0);">See all notifications<i class="fa fa-angle-right"></i> </a>
 								</li>
 							</ul>
-						</li>
+						</li> --}}
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
@@ -247,7 +247,8 @@
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="{{('public/assets/img/profile.jpg')}}" alt="..." class="avatar-img rounded-circle">
+						
+							<img src="{{('public/assets/img/avata_user.png')}}" alt="..." class="avatar-img rounded-circle">
 						</div>
 						
 						<div class="info">

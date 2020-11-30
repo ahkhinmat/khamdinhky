@@ -37,6 +37,7 @@ class HomeController extends Controller
            Session::put('user_mayte',$result->MaYte);
            Session::put('user_id',$result->user_id);
            Session::put('user_name',$result->TenBenhNhan);
+           Session::put('BenhNhan_Id',$result->BenhNhan_Id);
            return view('dashboard')->with('user_info', $result);
        }
        else{

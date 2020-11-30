@@ -1,3 +1,8 @@
+<?php    $user_id=Session::get('user_id');
+$user_mayte=Session::get('user_mayte');
+$user_name=Session::get('user_name');
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +41,7 @@
 			<!-- Logo Header -->
 			<div class="logo-header">
 				<a href="dashboard" class="logo">
-				<img src="{{asset('public/assets/img/logo-hoanmy.jpg')}}" alt="..." class="avatar-img rounded-circle logo">
+				<img src="{{asset('public/assets/img/logo-hoanmy.png')}}" alt="..." class="avatar-img rounded-circle logo">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -205,7 +210,7 @@
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="{{('public/assets/img/profile.jpg')}}" alt="..." class="avatar-img rounded-circle">
+									<img src="{{('public/assets/img/avata_user.png')}}" alt="..." class="avatar-img rounded-circle">
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -213,22 +218,22 @@
 									<div class="user-box">
 										<div class="avatar-lg"><img src="{{('public/assets/img/profile.jpg')}}" alt="image profile" class="avatar-img rounded"></div>
 										<div class="u-text">
-											<h4>Hizrian</h4>
-											<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+										<h4>{{$user_name}}</h4>
+											{{-- <p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a> --}}
 										</div>
 									</div>
 								</li>
 								<li>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">My Profile</a>
-									<a class="dropdown-item" href="#">My Balance</a>
+									<a class="dropdown-item" href="#">Thông tin cá nhân</a>
+									{{-- <a class="dropdown-item" href="#">My Balance</a>
 									<a class="dropdown-item" href="#">Inbox</a>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="#">Account Setting</a>
-									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="{{URL::To('/logout')}}">Logout</a>
+									<div class="dropdown-divider"></div> --}}
+									<a class="dropdown-item" href="{{URL::To('/logout')}}">Đăng xuất</a>
 							
-									<a class="dropdown-item" href="{{URL::to('login')}}">Log in</a>
+									{{-- <a class="dropdown-item" href="{{URL::to('login')}}">Log in</a> --}}
 								</li>
 							</ul>
 						</li>
@@ -254,9 +259,7 @@
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									<?php    $user_id=Session::get('user_id');
-									$user_mayte=Session::get('user_mayte');
-									$user_name=Session::get('user_name');
+									<?php   
 									echo $user_name;
 									 ?>
 									<span class="user-level">	<?php echo'Mã y tế '. $user_mayte; ?></span>
@@ -290,7 +293,7 @@
 					<ul class="nav">
 						<li class="nav-item active">
 							<a href="dashboard">
-								<i class="fas fa-home"></i>
+								<i class="fas fa-home home-icon"></i>
 								<p>Thông tin chung</p>
 								<span class="badge badge-count">5</span>
 							</a>
@@ -304,28 +307,22 @@
 						
 						</li>
 						<li class="nav-item">
-						<a href="{{URL::to('/khambenh')}}">
-							<i class="fas fa-file-medical"></i>
-								<p>Khám bệnh</p>
-							
-							</a>
-							
-						</li>
-						<li class="nav-item">
 							<a  href="{{URL::to('/tuvan')}}">
 								<i class="far fa-comment"></i>
 								<p>Tư vấn</p>
-							
 							</a>
-					
+						</li>
+						<li class="nav-item">
+						<a href="{{URL::to('/khambenh')}}">
+							<i class="fas fa-file-medical"></i>
+								<p>Khám bệnh</p>
+							</a>
 						</li>
 						<li class="nav-item">
 							<a href="{{URL::to('/xetnghiem')}}">
 								<i class="fas fa-vial"></i>
 								<p>Xét nghiệm</p>
-						
 							</a>
-				
 						</li>
 						<li class="nav-item">
 							<a href="{{URL::to('/chandoanhinhanh')}}">
@@ -357,12 +354,8 @@
 							<a  href="{{URL::to('/thuoc')}}">
 								<i class="fas fa-capsules"></i>
 								<p>Thuốc</p>
-								
 							</a>
-						
 						</li>
-						
-					
 					</ul>
 				</div>
 			</div>

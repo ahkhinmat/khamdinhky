@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use Session;
 
 class CDHAController extends Controller
 {
@@ -13,7 +15,12 @@ class CDHAController extends Controller
      */
     public function index()
     {
-        return view('pages.cdha');
+        $BenhNhan_Id=Session::get('BenhNhan_Id');
+        $kq_cdha= DB::table('ksk_ketqua')->where('BenhNhan_Id', $BenhNhan_Id)
+        ->where('PhanLoai',4)
+        ->orderby( 'NgayKetQua','desc')->get();
+        return view('pages.cdha')->with('kq_cdha',$kq_cdha);
+  
     }
 
     /**

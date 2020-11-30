@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Session;
 class XetNghiemController extends Controller
 {
     /**
@@ -13,7 +14,10 @@ class XetNghiemController extends Controller
      */
     public function index()
     {
-        $kq_xnbn= DB::table('ksk_ketqua_xetnghiem')->where('BenhNhan_Id',197633)->orderby( 'DichVu_Id','desc')->get();
+        $BenhNhan_Id=Session::get('BenhNhan_Id');
+        $kq_xnbn= DB::table('ksk_ketqua_xetnghiem')->where('BenhNhan_Id', $BenhNhan_Id)
+        ->orderby( 'NgayGioThucHien','desc')
+        ->orderby( 'DichVu_Id','desc')->get();
        // return view('pages.xetnghiem.ketquaxetnghiem')->with('kq_xnbn',$kq_xnbn);
         return view('pages.xetnghiem')->with('kq_xnbn',$kq_xnbn);
     }

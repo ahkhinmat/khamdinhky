@@ -1,6 +1,13 @@
 .batthuong {
 	color: red !important;
 }
+.nav-pills.nav-secondary .nav-link.active{
+	background: #9b2 !important;
+	border: 1px solid #9b2 !important;
+}
+.fas.fa-home.home-icon {
+	color: black  !important;
+}
 .avatar-img.rounded-circle.logo {
 	border-radius: 0% !important;
 }
@@ -18,11 +25,14 @@
 }
 .table-wrapper{
     overflow-y: scroll;
-  height: 768px;
+  height: 500px;
 }
 .headXN{
 background-color: white !important;
 color:black !important;
+border-radius: 1%;
+border:1px solid aqua !important;
+font-size: 22px !important;
 }
 .table-wrapper th{
     position: sticky;
@@ -30,15 +40,23 @@ color:black !important;
 }
 .tengroup {
     color:rgb(42, 56, 182) !important;
-    font-size: bold!important;
+    font-weight:  bold!important;
+    font-size: 15px!important;
 }
 .tendichvu {
     color:black !important;
-    font-size: bold!important;
+    font-weight:  bold!important;
+    font-size: 15px!important;
+}
+.ngaygiothuchien{
+    font-size: 22px !important;
+    color:rgb(3, 66, 14) !important;
+    text-transform: uppercase;
+    font-weight: bold!important;
 }
 .tennhomdichvu {
-    font-size: 22px !important;
-    color:rgb(196, 29, 29) !important;
+    font-size: 20px !important;
+    color:rgb(3, 66, 14) !important;
     text-transform: uppercase;
     font-weight: bold!important;
 }

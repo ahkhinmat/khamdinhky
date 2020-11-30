@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
+use Session;
 class KhamBenhController extends Controller
 {
     /**
@@ -13,7 +14,11 @@ class KhamBenhController extends Controller
      */
     public function index()
     {
-        return view('pages.khambenh');
+        $BenhNhan_Id=Session::get('BenhNhan_Id');
+        $kq_cdha= DB::table('ksk_ketqua')->where('BenhNhan_Id', $BenhNhan_Id)
+        ->where('PhanLoai',2)
+        ->orderby( 'NgayKetQua','desc')->get();
+        return view('pages.khambenh')->with('kq_cdha',$kq_cdha);
     }
 
     /**

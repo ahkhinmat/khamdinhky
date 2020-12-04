@@ -5,9 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Session;
+use Illuminate\Support\Facades\Redirect;
 
 class CDHAController extends Controller
 {
+    public function AuthenLogin(){
+        $user_id=Session::get('user_id');
+        if($user_id){
+            return Redirect::to('dashboard');
+        }else{
+           return  Redirect::to('login')->send();
+        }
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +24,7 @@ class CDHAController extends Controller
      */
     public function index()
     {
+        $this->AuthenLogin();
         $BenhNhan_Id=Session::get('BenhNhan_Id');
         $kq_cdha= DB::table('ksk_ketqua')->where('BenhNhan_Id', $BenhNhan_Id)
         ->where('PhanLoai',4)

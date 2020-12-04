@@ -3,9 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use Session;
+use Illuminate\Support\Facades\Redirect;
 
 class ThuocController extends Controller
 {
+    public function AuthenLogin(){
+        $user_id=Session::get('user_id');
+        if($user_id){
+            return Redirect::to('dashboard');
+        }else{
+           return  Redirect::to('login')->send();
+        }
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,6 +24,7 @@ class ThuocController extends Controller
      */
     public function index()
     {
+        $this->AuthenLogin();
         return view('pages.thuoc');
     }
 

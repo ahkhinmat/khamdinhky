@@ -9,11 +9,13 @@
             </button>
             <div class="dropdown-menu">
                 <div class="arrow"></div>
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="{{URL::to('/khambenh')}}">Khám bệnh</a>
+                <a class="dropdown-item"  href="{{URL::to('/tuvan')}}">Tư vấn</a>
+                <a class="dropdown-item" href="{{URL::to('/xetnghiem')}}">Xét nghiệm</a>
+                <a class="dropdown-item" href="{{URL::to('/chandoanhinhanh')}}">Chẩn đoán hình ảnh</a>
+                <a class="dropdown-item" href="{{URL::to('/thuoc')}}">Thuốc</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
+                <a class="dropdown-item" href="#">Liên hệ</a>
             </div>
         </div>
     </div>

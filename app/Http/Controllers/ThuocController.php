@@ -25,7 +25,10 @@ class ThuocController extends Controller
     public function index()
     {
         $this->AuthenLogin();
-        return view('pages.thuoc');
+        $BenhNhan_Id=Session::get('BenhNhan_Id');
+        $kq_xnbn=DB::select('call  get_thuoc (?)',array($BenhNhan_Id));
+       //dd(  $kq_xnbn);
+        return view('pages.thuoc')->with('kq_xnbn',$kq_xnbn);
     }
 
     /**

@@ -110,6 +110,8 @@
                             <div class="numbers">
                                 <p class="card-category">Huyết Áp</p>
                                 <h4 class="card-title">    {{ $kq_xnbn[0]->HuyetAp }}</h4>
+
+                              
                             </div>
                         </div>
                     </div>
@@ -128,7 +130,7 @@
                         <div class="col col-stats ml-3 ml-sm-0">
                             <div class="numbers">
                                 <p class="card-category">Phân loại thể lực</p>
-                                <h4 class="card-title">9</h4>
+                                <h4 class="card-title">Loại  {{ ($kq_xnbn[0]->PhanLoaiSucKhoe) }}</h4>
                             </div>
                         </div>
                     </div>
@@ -136,25 +138,13 @@
             </div>
         </div>
    
-
+    
   </div>
 
   <div class="row">
-    <div class="table-responsive table-wrapper ">
-      <table  class="display table table-striped table-hover" >
-        <thead>
-          <tr>
-            <th  class="headXN" scope="col">Tên xét nghiệm</th>
-            <th class="headXN" scope="col">Kết quả</th>
-            <th class="headXN" scope="col">Đơn vị tính</th>
-            <th class="headXN" scope="col">Trị số bình thường</th>
-          </tr>
-        </thead>
-
-        <tbody>
-        </tbody>
-      </table>
-    </div>
+    <p> Tư vấn:  {{ ($kq_xnbn[0]->KetLuan_Text) }}</p>
+    <p> Bất thường:  {{ ($kq_xnbn[0]->NhanXet_Text) }}</p>
+    <p> Xếp loại:  {{ ($kq_xnbn[0]->XepLoai) }}</p>
   </div>   
    
 </div>

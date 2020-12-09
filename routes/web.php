@@ -18,7 +18,8 @@ Route::get('/dashboard', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::post('/dashboard', 'HomeController@postlogin');
 Route::get('/login', 'HomeController@login');
-Route::get('/logout', 'HomeController@logout');
+Route::get('/logout', 'HomeController@logout')->name('home.logout');
+Route::get('/userprofile', 'HomeController@userprofile')->name('home.userprofile');
 /* home */
 
 Route::get('/khambenh', 'KhamBenhController@index');

@@ -15,8 +15,8 @@
 	background: #79bc4b !important;
 }
 .btn.btn-primary.btn-rounded.btn-login.login {
-    background-color: #9b2 !important;
-    border-color: #9b2 !important;
+    background-color:#9b2 !important;
+    border-color:  #9b2 !important;
 }
 .caption-ketqua{
     text-align: center !important;
@@ -28,10 +28,9 @@
   height: 500px;
 }
 .headXN{
-background-color: white !important;
+background-color: rgb(208, 224, 147) !important;
 color:black !important;
 border-radius: 1%;
-border:1px solid aqua !important;
 font-size: 22px !important;
 }
 .table-wrapper th{

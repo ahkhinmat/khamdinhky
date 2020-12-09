@@ -6,7 +6,7 @@
   </div>
   <div class="row">
     <div class="table-responsive table-wrapper ">
-      <table  class="display table table-striped table-hover" >
+      <table  class="display table table-hover" >
         <thead>
           <tr>
               {{-- <th class="headXN" scope="col">BenhNhan_Id</th>

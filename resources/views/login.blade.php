@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Login</title>
+	<title>Đăng nhập</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="{{asset('public/assets/img/icon.ico')}}" type="image/x-icon"/>
+	<link rel="icon" href="{{asset('public/assets/img/logo-hoanmy.png')}}" type="image/png"/>
 
 	<!-- Fonts and icons -->
 	<script src="{{asset('public/assets/js/plugin/webfont/webfont.min.js')}}"></script>

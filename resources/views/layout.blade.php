@@ -10,7 +10,7 @@ $user_name=Session::get('user_name');
 	<title>CHC</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	{{-- <link href="{{asset('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet"> --}}
-<link rel="icon" href="{{asset('public/assets/img/icon.ico')}}" type="image/x-icon"/>
+<link rel="icon" href="{{asset('public/assets/img/favicon.ico')}}" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
 	<script src="{{asset('public/assets/js/plugin/webfont/webfont.min.js')}}"></script>
@@ -41,7 +41,7 @@ $user_name=Session::get('user_name');
 			<!-- Logo Header -->
 			<div class="logo-header">
 				<a href="dashboard" class="logo">
-				<img src="{{asset('public/assets/img/logo-hoanmy.png')}}" alt="..." class="avatar-img rounded-circle logo">
+				<img src="{{asset('public/assets/img/logohmdn.png')}}" alt="..." class="avatar-img rounded-circle logo">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -89,7 +89,7 @@ $user_name=Session::get('user_name');
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<li>
 									<div class="user-box">
-										<div class="avatar-lg"><img src="{{('public/assets/img/profile.jpg')}}" alt="image profile" class="avatar-img rounded"></div>
+										<div class="avatar-lg"><img src="{{('public/assets/img/avata_user.png')}}" alt="image profile" class="avatar-img rounded"></div>
 										<div class="u-text">
 										<h4>{{$user_name}}</h4>
 											{{-- <p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a> --}}
@@ -99,8 +99,7 @@ $user_name=Session::get('user_name');
 								<li>
 									<div class="dropdown-divider"></div>
 									<a class="dropdown-item" href="{{route('home.userprofile')}}">Thông tin cá nhân</a>
-									<a class="dropdown-item" href="{{route('home.logout')}}">Đăng xuất</a>
-							
+									<a class="dropdown-item" href="{{route('home.logout')}}">Đăng xuất</a>			
 									{{-- <a class="dropdown-item" href="{{URL::to('login')}}">Log in</a> --}}
 								</li>
 							</ul>
@@ -111,7 +110,6 @@ $user_name=Session::get('user_name');
 			</nav>
 			<!-- End Navbar -->
 		</div>
-
 		<!-- Sidebar -->
 		<div class="sidebar">
 			

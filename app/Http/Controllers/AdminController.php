@@ -87,38 +87,42 @@ class AdminController extends Controller
         return  $trave;
     }
     public function sendSmsContent(Request $request){
-      $noidung=$request['noidungSms'];
+        $noidung=$request['noidungSms'];
+        $hopdong_id=$request['hopdong_id'];
         $i=0;
         foreach ($request['listPhone'] as $value) {
            $i++;
             if($value["SoDienThoai"]){
-                if($i>0){
-                    $ketqua=   AdminController::goitinnhan( $noidung,AdminController::validateCellphone($value["SoDienThoai"]));
-                    //ghi log kết quả gởi tin nhắn vào Database
-                    $data=array();
-                    $data['sodienthoai']=$value["SoDienThoai"];
-                    $data['mayte']=$value['MaYte'];
-                    $data['ketquasms']= $ketqua;
-                    //print_r($data);
-                    DB::table('sms_log')->insert($data);
-                    //
-                    //echo(  $ketqua.'-'.$value['MaYte'].' sodienthoai '.($value["SoDienThoai"]).'<br>') ;
+                $ketqua=   AdminController::goitinnhan( $noidung,AdminController::validateCellphone($value["SoDienThoai"]));
+                //ghi log kết quả gởi tin nhắn vào Database
+                $data=array();
+                $data['sodienthoai']=$value["SoDienThoai"];
+                $data['mayte']=$value['MaYte'];
+                $data['ketquasms']= $ketqua;
+                $data['noidungsms']=  $noidung;
+                $data['trangthaisms']= '';
+                $pos = strpos( $ketqua, 'success');
+                if ($pos === false) {
+                    $data['trangthaisms']='gởi lỗi';
+                }else{
+                    $data['trangthaisms']='thành công';
                 }
-                else{
-                    //echo( $value['MaYte'].' sodienthoai '.($value["SoDienThoai"]).'<br>') ;
-                }
+                $data['hopdong_id']=  $hopdong_id;
+                DB::table('sms_log')->insert($data);
+                //ghi log kết quả gởi tin nhắn vào Database
+               // echo(  $i.'-'.$value['MaYte'].' sodienthoai '.($value["SoDienThoai"]).'<br>') ;
             }else{
                 $data=array();
                 $data['sodienthoai']=$value["SoDienThoai"];
                 $data['mayte']=$value['MaYte'];
                 $data['ketquasms']= 'null phone';
-                //print_r($data);
+                $data['trangthaisms']='chưa gởi';
+                $data['hopdong_id']=  $hopdong_id;
                 DB::table('sms_log')->insert($data);
-               // echo('Lỗi '.$i.'-'.$value['MaYte'].'--null--'. $value['SoDienThoai'].'<br>');
+               // echo($i.'-'.$value['MaYte'].'--null--'. $value['SoDienThoai'].'<br>');
             }
         }
     }
-    
     public function index()
     {
         return view('admin.layoutadmin');

@@ -11,12 +11,12 @@
   </style>
 <div class="page-inner">
     <div class="row">
-        <div class="col-sm-4">
-            Chọn hợp đồng<input class="form-control" id="lsHopdong" value="" />
-            <textarea name="smscontent" class="form-control" id="smscontent" rows="10" placeholder="Nhập nội dung tin nhắn không dấu"></textarea>
+        <div class="col-sm-12">
+           <input class="form-control" id="lsHopdong" value="" />
+            <textarea name="smscontent" class="form-control" id="smscontent" rows="2" placeholder="Nhập nội dung tin nhắn không dấu"></textarea>
         </div>
 
-        <div class="col-sm-8">
+        <div class="col-sm-12">
             <div class="table-responsive">
                     <table id="table" 
                     data-toolbar="#toolbar"
@@ -45,9 +45,11 @@
       </div>
     </div>
     <script type="text/javascript">
+    var _hopdong_id=0;
         $(document).ready(function() {
 
             var dulieu='';
+            
             $.ajax({
                 type: 'GET',
                 async : false,
@@ -71,6 +73,7 @@
              });
             
              $('#lsHopdong').change(function(input){
+              _hopdong_id=input.delegateTarget.value;
                 $table.bootstrapTable('refresh', {
                      url: document.URL+ '/benhnhan_byhopdong/'+input.delegateTarget.value+'?hopdong_id'
                  });
@@ -84,12 +87,14 @@
 
     var checkedRows = [];//tổng số tin nhắn sẽ gởi đi
     $('#sendSms').click(function(){
-                if(checkedRows.length==0){
+      var noidungSms=$('#smscontent').val();
+      if(noidungSms!=''){
+        if(checkedRows.length==0){
                     alert('Hãy tic chọn tin nhắn tất cả');
                 }
                 else{
-                    var noidungSms=$('#smscontent').val();
-                    alert(noidungSms);
+                   
+                   // alert(noidungSms);
                     $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -99,16 +104,21 @@
                     type: "POST",
                     datatype: 'JSON',
                     url: 'sendSmsContent',
-                    data: { 'listPhone':checkedRows,'noidungSms':noidungSms
-                    },
+                    data: { 'listPhone':checkedRows,'noidungSms':noidungSms,'hopdong_id':_hopdong_id},
                     success:  function(data, status, xhr) {
-									alert(data);
-                                    },
+                          $table.bootstrapTable('refresh', {
+                          url: document.URL+ '/benhnhan_byhopdong/'+_hopdong_id+'?hopdong_id'
+                          });
+                     },
                     error: function (response) {
                        // console.log(response);
                     }
                     });
                 }
+      }else{
+        alert('hãy nhập nội dung tin nhắn');
+      }
+         
     });
 
     var $table = $('#table')
@@ -172,56 +182,66 @@
   
     function initTable() {
       $table.bootstrapTable('destroy').bootstrapTable({
-        height: 500,
+        height: (window.innerHeight-240),
        // locale: $('#locale').val(),
         columns: [
-          [{
+
+          [
+            {
             field: 'state',
             checkbox: true,
-            rowspan: 2,
-            align: 'center',
+           // rowspan: 2,
+            align: 'left',
             valign: 'middle'
-          }, {
+          },
+            {
             title: 'Mã Y Tế',
             field: 'MaYte',
-            rowspan: 2,
-            align: 'center',
+          //  rowspan: 2,
+            align: 'left',
             valign: 'middle',
             sortable: true,
             footerFormatter: totalTextFormatter
-          }, {
-            title: 'Thông tin BN',
-            colspan: 4,
-            align: 'center'
-          }],
-          [{
+          },
+          
+          {
             field: 'TenBenhNhan',
             title: 'Họ tên BN',
             sortable: true,
             footerFormatter: totalNameFormatter,
-            align: 'center'
+            align: 'left'
           }, {
             field: 'NamSinh',
             title: 'Năm sinh',
             sortable: true,
-            align: 'center',
+            align: 'left',
 
-          }, {
-            field: 'DiaChi',
-            title: 'Địa chỉ',
-            align: 'center',
+          },
+          {
+            field: 'SoDienThoai',
+            title: 'Điện thoại',
+            align: 'left',
             clickToSelect: false,
            // events: window.operateEvents,
           //  formatter: operateFormatter
           },
           {
-            field: 'SoDienThoai',
-            title: 'Điện thoại',
-            align: 'center',
+            field: 'GoiThanhCong',
+            title: 'Gởi thành công',
+            align: 'left',
             clickToSelect: false,
            // events: window.operateEvents,
           //  formatter: operateFormatter
-          }]
+          },
+          {
+            field: 'ThaoTacGoi',
+            title: 'Số lần gởi',
+            align: 'left',
+            clickToSelect: false,
+           // events: window.operateEvents,
+          //  formatter: operateFormatter
+          },
+        ]
         ]
       });
 

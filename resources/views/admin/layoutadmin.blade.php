@@ -247,7 +247,7 @@ $user_name=Session::get('user_name');
 		</div>
 		
 		<!-- Custom template | don't include it in your project! -->
-		<div class="custom-template">
+		{{-- <div class="custom-template">
 			<div class="title">Settings</div>
 			<div class="custom-content">
 				<div class="switcher">
@@ -275,7 +275,7 @@ $user_name=Session::get('user_name');
 			<div class="custom-toggle">
 				<i class="flaticon-settings"></i>
 			</div>
-		</div>
+		</div> --}}
 		<!-- End Custom template -->
 	</div>
 </div>

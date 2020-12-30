@@ -182,7 +182,7 @@
   
     function initTable() {
       $table.bootstrapTable('destroy').bootstrapTable({
-        height: (window.innerHeight-240),
+        height: (window.innerHeight-230),
        // locale: $('#locale').val(),
         columns: [
 

@@ -154,7 +154,7 @@ $user_name=Session::get('user_name');
 								</li>
 								<li>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="{{route('home.userprofile')}}">Thông tin cá nhân</a>
+									{{-- <a class="dropdown-item" href="{{route('home.userprofile')}}">Thông tin cá nhân</a> --}}
 									<a class="dropdown-item" href="{{route('home.logout')}}">Đăng xuất</a>
 							
 									{{-- <a class="dropdown-item" href="{{URL::to('login')}}">Log in</a> --}}
@@ -194,11 +194,11 @@ $user_name=Session::get('user_name');
 
 							<div class="collapse in" id="collapseExample">
 								<ul class="nav">
-									<li>
+									{{-- <li>
 										<a  href="{{route('home.userprofile')}}">Thông tin cá nhân</a>
 											<span class="link-collapse">Thông tin cá nhân</span>
 										</a>
-									</li>
+									</li> --}}
 									<li>
 										<a href="{{route('home.logout')}}">Đăng xuất</a>
 											<span class="link-collapse">Cài đặt</span>

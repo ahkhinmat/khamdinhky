@@ -30,21 +30,23 @@ class HomeController extends Controller
        $user_mayte=$request->user_mayte;
        $user_password=($request->user_password);
     $result=DB::select('call  get_login_infor (?,?)',array(  $user_mayte, $user_password));
-    //dd( ($result));
        if($result){
             session_start();
-           Session::put('user_mayte',$result[0]->MaYte);
-           Session::put('user_id',$result[0]->user_id);
-           Session::put('user_name',$result[0]->TenBenhNhan);
-           Session::put('BenhNhan_Id',$result[0]->BenhNhan_Id);
-           Session::put('TenBenhNhan',$result[0]->TenBenhNhan);
-           Session::put('NgaySinh',$result[0]->NgaySinh);
-           Session::put('DiaChi',$result[0]->DiaChi);
-           Session::put('Gioi',$result[0]->Gioi);
-           Session::put('SoDienThoai',$result[0]->SoDienThoai);
-        
-        
-           return view('dashboard')->with('user_info', $result[0]);
+            if($result[0]->MaYte=='admin'){
+                Session::put('user_id_admin',$result[0]->MaYte);
+                return view('admin.layoutadmin');
+            }else{
+                Session::put('user_mayte',$result[0]->MaYte);
+                Session::put('user_id',$result[0]->user_id);
+                Session::put('user_name',$result[0]->TenBenhNhan);
+                Session::put('BenhNhan_Id',$result[0]->BenhNhan_Id);
+                Session::put('TenBenhNhan',$result[0]->TenBenhNhan);
+                Session::put('NgaySinh',$result[0]->NgaySinh);
+                Session::put('DiaChi',$result[0]->DiaChi);
+                Session::put('Gioi',$result[0]->Gioi);
+                Session::put('SoDienThoai',$result[0]->SoDienThoai);
+                return view('dashboard')->with('user_info', $result[0]);
+            }
        }
        else{
            Session::put('message','Mật khẩu hoặc tài khoản ko đúng');
@@ -55,6 +57,7 @@ class HomeController extends Controller
     public function logout(Request $request){
         Session::put('user_mayte',null);
         Session::put('user_id',null);
+        Session::put('user_id_admin',null);
         return  Redirect::to('/login');
     }
     public function userprofile(){

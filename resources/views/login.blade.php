@@ -43,7 +43,7 @@
                 <div class="login-form">
                     <div class="form-group form-floating-label">
                         <input id="user_mayte" name="user_mayte" type="text" class="form-control input-border-bottom" required>
-                        <label for="user_mayte" class="placeholder">Mã y tế</label>
+                        <label for="user_mayte" class="placeholder">Tài khoản (Mã y tế)</label>
                     </div>
                     <div class="form-group form-floating-label">
                         <input id="user_password" name="user_password" type="password" class="form-control input-border-bottom" required>

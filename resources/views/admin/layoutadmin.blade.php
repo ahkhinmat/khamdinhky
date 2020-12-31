@@ -33,7 +33,7 @@ $user_name=Session::get('user_name');
 <script src="{{asset('public/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
 
 <!-- Moment JS -->
-<script src="{{asset('public/assets/js/plugin/moment/moment.min.js')}}"></script>
+{{-- <script src="{{asset('public/assets/js/plugin/moment/moment.min.js')}}"></script> --}}
 
 <!-- Chart JS -->
 {{-- <script src="{{asset('public/assets/js/plugin/chart.js/chart.min.js')}}"></script> --}}

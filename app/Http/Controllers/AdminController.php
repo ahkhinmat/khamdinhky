@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-//use Symfony\Component\HttpFoundation\Response;
 use DB;
-//use Spatie\ArrayToXml\ArrayToXml;
+use Session;
+use Illuminate\Support\Facades\Redirect;
 
 class AdminController extends Controller
 {
@@ -123,9 +123,18 @@ class AdminController extends Controller
             }
         }
     }
+    public function AuthenLoginAdmin(){
+        $user_id_admin=Session::get('user_id_admin');
+        if($user_id_admin){
+            return view('admin.layoutadmin');
+        }else{
+            return  Redirect::to('login');
+        }
+    }
     public function index()
-    {
-        return view('admin.layoutadmin');
+    { 
+        return $this->AuthenLoginAdmin();
+        //return view('admin.layoutadmin');
     }
 
     /**

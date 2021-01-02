@@ -8,6 +8,9 @@
     .like {
       margin-right: 10px;
     }
+    #tableinfo{
+      color: red !important;
+    }
   </style>
 <div class="page-inner">
     <div class="row">
@@ -21,7 +24,7 @@
                     <table id="table" 
                     data-toolbar="#toolbar"
                     data-search="true"
-                    data-show-refresh="true"
+                    {{-- data-show-refresh="true" --}}
                     data-show-toggle="true"
                     data-show-fullscreen="true"
                     data-show-columns="true"
@@ -29,9 +32,9 @@
                     data-detail-view="false"
                     data-show-export="true"
                     data-click-to-select="true"
-                    data-detail-formatter="detailFormatter"
-                    data-minimum-count-columns="2"
-                    data-show-footer="true"
+                    {{-- data-detail-formatter="detailFormatter" --}}
+                   data-minimum-count-columns="1"
+                    data-show-footer="false"
                     data-id-field="MaYte"
                     >
                 </table>
@@ -39,6 +42,7 @@
                     <button id="sendSms" class="btn btn-success" type="submit" >
                         <i class="fab fa-telegram-plane"></i> Gởi tin nhắn
                     </button>
+                    <label  name="tableinfo" id="tableinfo">0<label
                 </div>
             </div>
         </div>
@@ -47,7 +51,7 @@
     <script type="text/javascript">
     var _hopdong_id=0;
         $(document).ready(function() {
-
+        
             var dulieu='';
             
             $.ajax({
@@ -77,6 +81,10 @@
                 $table.bootstrapTable('refresh', {
                      url: document.URL+ '/benhnhan_byhopdong/'+input.delegateTarget.value+'?hopdong_id'
                  });
+               
+                 var rowCount = ($('#table tr:last').index() + 1);
+                 //alert(rowCount);
+                 //$('#tableinfo').text( ($('#table tr:last').index() + 1));
                  checkedRows = [];
             });
         });
@@ -109,6 +117,7 @@
                           $table.bootstrapTable('refresh', {
                           url: document.URL+ '/benhnhan_byhopdong/'+_hopdong_id+'?hopdong_id'
                           });
+                       
                      },
                     error: function (response) {
                        // console.log(response);
@@ -174,7 +183,8 @@
     }
   
     function totalNameFormatter(data) {
-      return data.length
+      alert(data.length);  
+        return data.length
     }
   
     function totalPriceFormatter(data) {
@@ -184,22 +194,20 @@
       $table.bootstrapTable('destroy').bootstrapTable({
         height: (window.innerHeight-223),
        // locale: $('#locale').val(),
-        columns: [
-
-          [
+        columns: [  
             {
             field: 'state',
             checkbox: true,
            // rowspan: 2,
-            align: 'left',
-            valign: 'middle'
+            align: 'center',
+            footerFormatter: '',
           },
             {
             title: 'Mã Y Tế',
             field: 'MaYte',
           //  rowspan: 2,
             align: 'left',
-            valign: 'middle',
+          //  valign: 'middle',
             sortable: true,
             footerFormatter: totalTextFormatter
           },
@@ -209,19 +217,21 @@
             title: 'Họ tên BN',
             sortable: true,
             footerFormatter: totalNameFormatter,
-            align: 'left'
+            align: 'left',
+         
           }, {
             field: 'NamSinh',
             title: 'Năm sinh',
             sortable: true,
             align: 'left',
-
+            footerFormatter: '',
           },
           {
             field: 'SoDienThoai',
             title: 'Điện thoại',
             align: 'left',
             clickToSelect: false,
+            footerFormatter: '',
            // events: window.operateEvents,
           //  formatter: operateFormatter
           },
@@ -230,6 +240,7 @@
             title: 'Gởi thành công',
             align: 'left',
             clickToSelect: false,
+            footerFormatter: '',
            // events: window.operateEvents,
           //  formatter: operateFormatter
           },
@@ -238,10 +249,11 @@
             title: 'Số lần gởi',
             align: 'left',
             clickToSelect: false,
+            footerFormatter: '',
            // events: window.operateEvents,
           //  formatter: operateFormatter
           },
-        ]
+        
         ]
       });
 
@@ -265,25 +277,30 @@
         $.each(rowsAfter, function(index, value) {
                checkedRows.push({MaYte : rowsAfter[index].MaYte,SoDienThoai: rowsAfter[index].SoDienThoai});
         });
+        $('#tableinfo').text( checkedRows.length+" tin nhắn sẽ gởi");
     });
 
     $('#table').on('uncheck-all.bs.table', function (e, row) {
        checkedRows=[];
+       $('#tableinfo').text( checkedRows.length+" tin nhắn sẽ gởi");
     });
 
 
     $('#table').on('check.bs.table', function (e, row) {
    
           checkedRows.push({MaYte : row.MaYte,SoDienThoai:row.SoDienThoai});
+          $('#tableinfo').text( checkedRows.length+" tin nhắn sẽ gởi");
     });
 
     $('#table').on('uncheck.bs.table', function (e, row) {
         $.each(checkedRows, function(index, value) {
             if (value.MaYte == row.MaYte) {
             checkedRows.splice(index,1);
-            }
-         });
 
+            }
+            $('#tableinfo').text( checkedRows.length+" tin nhắn sẽ gởi");
+         });
+        // $('#tableinfo').text( checkedRows.length);
         // var indexof = checkedRows.indexOf({mayte : row.MaYte,sodienthoai:row.SoDienThoai});
         // checkedRows.splice(indexof,1);
     });
@@ -303,6 +320,7 @@
             var $search = $('.fixed-table-toolbar .search input');
             $search.attr('placeholder', 'Tìm kiếm');
             $search.css('border', '1px solid blue');
+            $('.btn-secondary').css('background-color', '##9b2');
     });
   </script>
  

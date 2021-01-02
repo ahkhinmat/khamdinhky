@@ -1,6 +1,10 @@
 .batthuong {
 	color: red !important;
 }
+.btn-secondary {
+    background: #9b2 !important;
+	border: 1px solid #9b2 !important;
+}
 .nav-pills.nav-secondary .nav-link.active{
 	background: #9b2 !important;
 	border: 1px solid #9b2 !important;

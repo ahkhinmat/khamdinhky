@@ -78,22 +78,43 @@ class AdminController extends Controller
     }
     public  static function validateCellphone($cellphone){
         $trave='';
-        //kiểm tra kí tự đầu tiên có số không thì cắt đi và thay thế bằng 84
-      if(substr($cellphone, 0,1)=="0"){
-        $trave='84'.substr($cellphone, 1);  
-      } else{
-        $trave=$cellphone;
-      } 
+       //  $cellphone='0905.294.022';
+        $partern = '*[.]*';
+        $replacement = '';
+        // xóa dấu chấm 
+        $trave= preg_replace($partern, $replacement, $cellphone);
+        // xóa dấu chấm 
+        // xóa số 0 thay bằng 84
+        if(substr($trave, 0,1)=="0"){
+            $trave='84'.substr($trave, 1);  
+        }else{
+            $trave='84'.$trave;
+        }
         return  $trave;
     }
+    public function randomPassword() {
+        $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+        $pass = array(); //remember to declare $pass as an array
+        $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+        for ($i = 0; $i < 7; $i++) {
+            $n = rand(0, $alphaLength);
+            $pass[] = $alphabet[$n];
+        }
+        return implode($pass); //turn the array into a string
+    }
+    
     public function sendSmsContent(Request $request){
+        $matkhau_random='';
         $noidung=$request['noidungSms'];
         $hopdong_id=$request['hopdong_id'];
         $i=0;
         foreach ($request['listPhone'] as $value) {
            $i++;
             if($value["SoDienThoai"]){
-                $ketqua=   AdminController::goitinnhan( $noidung,AdminController::validateCellphone($value["SoDienThoai"]));
+                $matkhau_random=AdminController::randomPassword();
+                $noidung_sms= $noidung.'. Truy cap ket qua kham benh tai http://khamdinhky.gigamed.info/login , tai khoan: '. $value['MaYte'].
+                ' mat khau: '. $matkhau_random;
+                $ketqua=   AdminController::goitinnhan( $noidung_sms,AdminController::validateCellphone($value["SoDienThoai"]));
                 //ghi log kết quả gởi tin nhắn vào Database
                 $data=array();
                 $data['sodienthoai']=$value["SoDienThoai"];
@@ -109,7 +130,13 @@ class AdminController extends Controller
                 }
                 $data['hopdong_id']=  $hopdong_id;
                 DB::table('sms_log')->insert($data);
-                //ghi log kết quả gởi tin nhắn vào Database
+                  //ghi log kết quả gởi tin nhắn vào Database
+                  
+                //cập nhật mật khẩu random vào DB
+                $data2=array();
+                $data2['MatKhau']=$matkhau_random;
+                DB::table('ksk_users')->where('MaYte',$value['MaYte'])->update($data2);
+                //cập nhật mật khẩu random vào DB
                // echo(  $i.'-'.$value['MaYte'].' sodienthoai '.($value["SoDienThoai"]).'<br>') ;
             }else{
                 $data=array();

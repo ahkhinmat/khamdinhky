@@ -217,6 +217,26 @@ $user_name=Session::get('user_name');
 								<p>Thuốc</p>
 							</a>
 						</li>
+						<li class="nav-section">
+							
+							<span class="sidebar-mini-icon">
+								<i class="fa fa-ellipsis-h"></i>
+							</span>
+							<h4 class="text-section">Hệ thống</h4>
+						
+						</li>
+						<li class="nav-item">
+							<a href="{{route('home.logout')}}">
+								<i class="fas fa-sign-out-alt"></i>
+								<p>Thoát</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{route('home.logout')}}">
+								<i class="fas fa-users-cog"></i>
+								<p>Admin</p>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>

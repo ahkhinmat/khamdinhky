@@ -58,7 +58,7 @@
                             <label class="custom-control-label" for="rememberme">Nhớ mật khẩu</label>
                         </div>
                         
-                        <a href="#" class="link float-right">Quên mật khẩu ?</a>
+                        {{-- <a href="#" class="link float-right">Quên mật khẩu ?</a> --}}
                     </div>
                     <div class="form-action mb-3">
                         <input class="btn btn-primary btn-rounded btn-login login" type="submit" value="Đăng nhập" name="login">

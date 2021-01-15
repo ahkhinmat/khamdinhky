@@ -63,6 +63,7 @@ $user_name=Session::get('user_name');
 
 <script src="{{asset('public/assets/js/plugin/sweetalert/sweetalert.min.js')}}"></script>
 <script src="{{asset('public/assets/js/plugin/Multi-column-Dropdown-Plugin-jQuery-Inputpicker/src/jquery.inputpicker.js')}}"></script>
+<script src="{{asset('public/assets/js/buttons.print.min.js')}}"></script>
 
 <!-- Azzara JS -->
 <script src="{{asset('public/assets/js/ready.min.js')}}"></script>

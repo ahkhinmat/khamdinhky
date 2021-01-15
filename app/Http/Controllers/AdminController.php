@@ -120,7 +120,7 @@ class AdminController extends Controller
                 $data['sodienthoai']=$value["SoDienThoai"];
                 $data['mayte']=$value['MaYte'];
                 $data['ketquasms']= $ketqua;
-                $data['noidungsms']=  $noidung;
+                $data['noidungsms']=  $noidung_sms;
                 $data['trangthaisms']= '';
                 $pos = strpos( $ketqua, 'success');
                 if ($pos === false) {

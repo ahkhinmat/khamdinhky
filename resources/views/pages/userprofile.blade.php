@@ -29,13 +29,13 @@
                         <div class="col-md-6">
                             <div class="form-group form-group-default">
                                 <label>Họ tên</label>
-                            <input type="text" class="form-control" name="name" placeholder="Name" value="{{$TenBenhNhan}}">
+                            <input type="text" class="form-control" name="name" placeholder="Name" value="{{$TenBenhNhan}}" disabled>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-default">
                                 <label>Email</label>
-                            <input type="email" class="form-control" name="email" placeholder="Email" value="{{empty($Email)?'-':$Email}}">
+                            <input type="email" class="form-control" name="email" placeholder="Email" value="{{empty($Email)?'-':$Email}}" disabled>
                             </div>
                         </div>
                     </div>
@@ -43,20 +43,20 @@
                         <div class="col-md-4">
                             <div class="form-group form-group-default">
                                 <label>Ngày sinh</label>
-                            <input type="text" class="form-control" id="datepicker" name="datepicker" value="{{$NgaySinh}}" placeholder="Birth Date">
+                            <input type="text" class="form-control" id="datepicker" name="datepicker" value="{{$NgaySinh}}" placeholder="Ngày sinh" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group form-group-default">
                                 <label>Giới</label>
-                                    <input type="text" class="form-control" id="Gioi" name="Gioi" value="{{$Gioi}}" placeholder="Gioi">
+                                    <input type="text" class="form-control" id="Gioi" name="Gioi" value="{{$Gioi}}" placeholder="Giới tính" disabled>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group form-group-default">
                                 <label>Điện thoại</label>
-                            <input type="text" class="form-control" value="{{empty($SoDienThoai) ? '-':$SoDienThoai}}" name="phone" placeholder="Phone">
+                            <input type="text" class="form-control" value="{{empty($SoDienThoai) ? '-':$SoDienThoai}}" name="phone" placeholder="Điện thoại" disabled>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                         <div class="col-md-12">
                             <div class="form-group form-group-default">
                                 <label>Địa chỉ</label>
-                            <input type="text" class="form-control" value="{{$DiaChi}}" name="address" placeholder="Address">
+                            <input type="text" class="form-control" value="{{$DiaChi}}" name="address" placeholder="Địa chỉ" disabled>
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                         <div class="col-md-12">
                             <div class="form-group form-group-default">
                                 <label>Khác</label>
-                                <textarea class="form-control" name="about" placeholder="Thông tin khác" rows="3"></textarea>
+                                <textarea class="form-control" name="about" placeholder="Thông tin khác" rows="3" disabled></textarea>
                             </div>
                         </div>
                     </div>

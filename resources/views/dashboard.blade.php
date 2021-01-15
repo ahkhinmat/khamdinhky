@@ -102,7 +102,6 @@
     <div class="row row-card-no-pd">
     </div>
     <div class="row">
-
     </div>
 
 </div>

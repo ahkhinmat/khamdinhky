@@ -48,7 +48,7 @@ class HomeController extends Controller
                 Session::put('Gioi',$result[0]->Gioi);
                 Session::put('SoDienThoai',$result[0]->SoDienThoai);
                 $result_thongtin=DB::select('call  get_thongtinchung (?)',array($result[0]->BenhNhan_Id));
-              
+                Session::put('thongtin_chung',$result_thongtin);
                 return view('dashboard')->with('user_info', $result[0])->with('user_thongtin_chung', $result_thongtin);
             
             }
@@ -63,6 +63,7 @@ class HomeController extends Controller
         Session::put('user_mayte',null);
         Session::put('user_id',null);
         Session::put('user_id_admin',null);
+        Session::put('thongtin_chung',null);
         return  Redirect::to('/login');
     }
     public function userprofile(){

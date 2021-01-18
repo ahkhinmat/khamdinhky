@@ -35,7 +35,7 @@
                     {{-- {{dd($kq_cdha)}} --}}
                     @foreach ($kq_cdha as $item)
                 <div class="tab-pane fade show " id="pills-{{ $item->Autoid}}" role="tabpanel" aria-labelledby="pills-{{$item->Autoid}}-tab">
-                    <h3 style=" color:rgb(8, 99, 18)">{{$item->TenDichVu}}</h3>
+                    <h3 style=" color:rgb(8, 99, 18)">{{$item->TenDichVu}} ngày {{ date('d/m/y', strtotime($item->NgayKetQua))}}</h3>
                         <p><?php
                         $mangMota = json_decode($item->JsonKetqua)->{"MoTa"};
                         $count=count ($mangMota);
@@ -102,7 +102,7 @@
                         ->{"DeNghi_GhiChu"}[0]))?'':'Đề nghị: '.(json_decode($item->JsonKetqua)->{"DeNghi_GhiChu"}[0])}}</div>
                         <div>{{empty((json_decode($item->JsonKetqua)
                         ->{"KetLuan"}[0]))?'':'Kết luận: '.(json_decode($item->JsonKetqua)->{"KetLuan"}[0])}}</div>
-                        <div>Ngày kết quả : {{ date('d/m/y', strtotime($item->NgayKetQua))}}</div>
+                        {{-- <div>Ngày kết quả : {{ date('d/m/y', strtotime($item->NgayKetQua))}}</div> --}}
                     </div>
 
 

@@ -1,7 +1,7 @@
 <?php    $user_id=Session::get('user_id');
 $user_mayte=Session::get('user_mayte');
 $user_name=Session::get('user_name');
-
+$result_thongtin=Session::get('thongtin_chung');
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -156,7 +156,7 @@ $user_name=Session::get('user_name');
 							<a href="dashboard">
 								<i class="fas fa-home home-icon"></i>
 								<p>Thông tin chung</p>
-								<span class="badge badge-count">5</span>
+								{{-- <span class="badge badge-count">5</span> --}}
 							</a>
 						</li>
 						<li class="nav-section">
@@ -176,19 +176,19 @@ $user_name=Session::get('user_name');
 						<li class="nav-item">
 						<a href="{{URL::to('/khambenh')}}">
 							<i class="fas fa-file-medical"></i>
-								<p>Khám bệnh</p>
+								<p>Khám bệnh({{($result_thongtin[0]->SoLanKham)}})</p>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="{{URL::to('/xetnghiem')}}">
 								<i class="fas fa-vial"></i>
-								<p>Xét nghiệm</p>
+								<p>Xét nghiệm({{($result_thongtin[0]->SoDvXn)}})</p>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="{{URL::to('/chandoanhinhanh')}}">
 								<i class="far fa-images"></i>
-								<p>Chẩn đoán hình ảnh</p>
+								<p>Chẩn đoán hình ảnh({{($result_thongtin[0]->SoDvCDHA)}})</p>
 								{{-- <span class="caret"></span> --}}
 							</a>
 							{{-- <div class="collapse" id="maps">

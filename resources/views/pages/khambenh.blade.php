@@ -27,14 +27,19 @@
                 <div class="tab-content mt-2 mb-3" id="pills-tabContent">
                     @foreach ($kq_cdha as $item)
                 <div class="tab-pane fade show " id="pills-{{ $item->Autoid}}" role="tabpanel" aria-labelledby="pills-{{$item->Autoid}}-tab">
-                    <h3 style=" color:blue">{{$item->TenDichVu}}</h3>
+                    <h3 style=" color:blue">{{$item->TenDichVu}} (ngày {{ date('d/m/y', strtotime($item->NgayKetQua))}})</h3>
                         <p>
                             {{-- {{dd(json_decode($item->JsonKetqua)->dataKQ)}} --}}
                             <?php
                         $mangMota =  json_decode($item->JsonKetqua)->dataKQ;
                         $count=count($mangMota);
                         foreach ($mangMota as $value) {
-                                echo( $value->NoiDungKham. "  ".$value->Kham. " ". $value->KetLuan."<br>");
+                               //echo( $value->NoiDungKham. "  ".(empty($value->Kham)?'--':' '.($value->Kham)));
+                                echo ("<strong>".$value->NoiDungKham."</strong>");
+                                echo (empty($value->Kham)?'--':' '."<i>".($value->Kham)."</i>"."<br>");
+                              //  echo  ($value->KetLuan."<br>");
+                               
+
              
                         }
                   
@@ -43,7 +48,7 @@
                         // print_r  ($mangMota[0]);
                         // }
                         ?>
-                          <p>Ngày kết quả : {{ date('d/m/y', strtotime($item->NgayKetQua))}}</p>
+                          <p></p>
                         {{-- </p>
                         <p>{{empty((json_decode($item->JsonKetqua)
                         ->{"KyThuat_ThuThuat"}[0]))?'':'Kỹ thuật: '.(json_decode($item->JsonKetqua)->{"KyThuat_ThuThuat"}[0])}}</p>

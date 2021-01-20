@@ -140,6 +140,7 @@
    
     
   </div>
+     
     <div class="col-md-12"><strong> Tư vấn: </strong> {{ ($kq_xnbn[0]->KetLuan_Text) }}</div>
     <div class="col-md-12"><strong>Bất thường: </strong> {{ ($kq_xnbn[0]->NhanXet_Text) }}</div>
     <div class="col-md-12"><strong>Xếp loại:  {{ ($kq_xnbn[0]->XepLoai) }}</strong></div>

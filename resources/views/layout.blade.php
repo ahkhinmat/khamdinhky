@@ -7,10 +7,11 @@ $result_thongtin=Session::get('thongtin_chung');
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>CHC</title>
+	<title>Cổng bệnh án khám định kỳ Bệnh viện Hoàn Mỹ Đà Nẵng</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	{{-- <link href="{{asset('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet"> --}}
-<link rel="icon" href="{{asset('public/assets/img/favicon.ico')}}" type="image/x-icon"/>
+{{-- <link rel="icon" href="{{asset('public/assets/img/favicon.ico')}}" type="image/x-icon"/> --}}
+<link rel="icon" href="{{asset('public/assets/img/logo-hmdn.png')}}" sizes="20x20" type="image/png">
 
 	<!-- Fonts and icons -->
 	<script src="{{asset('public/assets/js/plugin/webfont/webfont.min.js')}}"></script>

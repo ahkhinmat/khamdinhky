@@ -10,7 +10,7 @@ $user_name=Session::get('user_name');
 	<title>CHC</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	{{-- <link href="{{asset('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet"> --}}
-<link rel="icon" href="{{asset('public/assets/img/favicon.ico')}}" type="image/x-icon"/>
+	<link rel="icon" href="{{asset('public/assets/img/logo-hmdn.png')}}" sizes="20x20" type="image/png">
 
 	<!-- Fonts and icons -->
 	<script src="{{asset('public/assets/js/plugin/webfont/webfont.min.js')}}"></script>

@@ -4,10 +4,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Đăng nhập</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="{{asset('public/assets/img/logo-hoanmy.png')}}" type="image/png"/>
 
 	<!-- Fonts and icons -->
-	<script src="{{asset('public/assets/js/plugin/webfont/webfont.min.js')}}"></script>
+    <script src="{{asset('public/assets/js/plugin/webfont/webfont.min.js')}}"></script>
+    <link rel="icon" href="{{asset('public/assets/img/logo-hmdn.png')}}" sizes="20x20" type="image/png">
 	<script>
 		WebFont.load({
 			google: {"families":["Open+Sans:300,400,600,700"]},
@@ -17,7 +17,7 @@
 			}
 		});
 	</script>
-	
+
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="{{asset('public/assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/assets/css/azzara.min.css')}}">
@@ -28,11 +28,9 @@
         {{ csrf_field() }}
         <div class="wrapper wrapper-login">
             <div class="container container-login animated fadeIn">
-
-                <h1 class="h3 mb-3 font-weight-normal text-center">Khám định kỳ Hoàn Mỹ Đà Nẵng</h1>
+                <img src="{{asset('public/assets/img/logohmdn.png')}}" alt="..." class="avatar-img rounded-circle logo">
+                <h1 class="h3 mb-3 font-weight-normal text-center">Khám Sức Khỏe Định Kỳ</h1>
                 {{-- <h3 class="text-center">Đăng nhập</h3> --}}
-
-
                 <?php
                     $message=Session::get('message');
                     if($message){

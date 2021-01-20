@@ -29,10 +29,15 @@ class TuVanController extends Controller
         // $kq_xnbn= DB::table('ksk_ketqua_tuvan')
         // ->where('BenhNhan_Id', $BenhNhan_Id)
         //  ->orderby( 'HopDong_Id','desc')->get();
-
+   
         $kq_xnbn=DB::select('call  get_tuvan (?)',array($BenhNhan_Id));
+        if( $kq_xnbn){
+            return view('pages.tuvan')->with('kq_xnbn',$kq_xnbn);
+        }else{
+            return view('pages.tuvan');
+        }
       //  dd(  $kq_xnbn);
-        return view('pages.tuvan')->with('kq_xnbn',$kq_xnbn);
+ 
     }
 
     /**

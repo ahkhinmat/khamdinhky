@@ -74,6 +74,7 @@ class AdminController extends Controller
        return response($ls_benhnhan);
     }
     public function show_listsms(){
+        return $this->AuthenLoginAdmin();
         return view('admin.listsms');
     }
     public  static function validateCellphone($cellphone){

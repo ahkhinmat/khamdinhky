@@ -74,7 +74,12 @@ class AdminController extends Controller
        return response($ls_benhnhan);
     }
     public function show_listsms(){
-        return $this->AuthenLoginAdmin();
+        $user_id_admin=Session::get('user_id_admin');
+        if($user_id_admin){
+            return view('admin.listsms');
+        }else{
+            return  Redirect::to('login');
+        }
         return view('admin.listsms');
     }
     public  static function validateCellphone($cellphone){

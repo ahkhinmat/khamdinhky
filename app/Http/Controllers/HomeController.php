@@ -54,7 +54,7 @@ class HomeController extends Controller
             }
        }
        else{
-           Session::put('message','Mật khẩu hoặc tài khoản ko đúng');
+           Session::put('message','Mật khẩu hoặc tài khoản không đúng');
            return  Redirect::to('/login');
        }
       

@@ -95,6 +95,7 @@
 
     var checkedRows = [];//tổng số tin nhắn sẽ gởi đi
     $('#sendSms').click(function(){
+      
       var noidungSms=$('#smscontent').val();
       if(noidungSms!=''){
         if(checkedRows.length==0){
@@ -117,6 +118,8 @@
                           $table.bootstrapTable('refresh', {
                           url: document.URL+ '/benhnhan_byhopdong/'+_hopdong_id+'?hopdong_id'
                           });
+                          checkedRows = [];
+                          $('#tableinfo').text( "Chưa chọn tin nhắn sẽ gởi");
                        
                      },
                     error: function (response) {
@@ -201,6 +204,7 @@
            // rowspan: 2,
             align: 'center',
             footerFormatter: '',
+            width: 1,
           },
             {
             title: 'Mã Y Tế',
@@ -218,13 +222,14 @@
             sortable: true,
             footerFormatter: totalNameFormatter,
             align: 'left',
-         
+            width: 25,
           }, {
             field: 'NamSinh',
             title: 'Năm sinh',
             sortable: true,
             align: 'left',
             footerFormatter: '',
+            width: 5,
           },
           {
             field: 'SoDienThoai',
@@ -232,6 +237,7 @@
             align: 'left',
             clickToSelect: false,
             footerFormatter: '',
+            width: 5,
            // events: window.operateEvents,
           //  formatter: operateFormatter
           },
@@ -244,14 +250,26 @@
            // events: window.operateEvents,
           //  formatter: operateFormatter
           },
+          // {
+          //   field: 'ThaoTacGoi',
+          //   title: 'Số lần gởi',
+          //   align: 'left',
+          //   clickToSelect: false,
+          //   footerFormatter: '',
+          // },
           {
-            field: 'ThaoTacGoi',
-            title: 'Số lần gởi',
+            field: 'GoiLanCuoi',
+            title: 'Gởi lần cuối',
             align: 'left',
             clickToSelect: false,
             footerFormatter: '',
-           // events: window.operateEvents,
-          //  formatter: operateFormatter
+          },
+          {
+            field: 'TrangThaiSms',
+            title: 'Kết quả cuối',
+            align: 'left',
+            clickToSelect: false,
+            footerFormatter: '',
           },
         
         ]

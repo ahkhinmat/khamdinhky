@@ -118,7 +118,7 @@ class AdminController extends Controller
            $i++;
             if($value["SoDienThoai"]){
                 $matkhau_random=AdminController::randomPassword();
-                $noidung_sms= $noidung.'. Truy cap ket qua kham benh tai http://khamdinhky.gigamed.info/login , tai khoan: '. $value['MaYte'].
+                $noidung_sms= $noidung.'. Truy cap ket qua kham benh tai https://khamdinhky.hoanmydanang.com/login , tai khoan: '. $value['MaYte'].
                 ' mat khau: '. $matkhau_random;
                 $ketqua=   AdminController::goitinnhan( $noidung_sms,AdminController::validateCellphone($value["SoDienThoai"]));
                 //ghi log kết quả gởi tin nhắn vào Database
@@ -148,8 +148,8 @@ class AdminController extends Controller
                 $data=array();
                 $data['sodienthoai']=$value["SoDienThoai"];
                 $data['mayte']=$value['MaYte'];
-                $data['ketquasms']= 'null phone';
-                $data['trangthaisms']='chưa gởi';
+                $data['ketquasms']= 'không có số điện thoại';
+                $data['trangthaisms']='chưa gởi được';
                 $data['hopdong_id']=  $hopdong_id;
                 DB::table('sms_log')->insert($data);
                // echo($i.'-'.$value['MaYte'].'--null--'. $value['SoDienThoai'].'<br>');

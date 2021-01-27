@@ -177,7 +177,7 @@ $result_thongtin=Session::get('thongtin_chung');
 						<li class="nav-item">
 						<a href="{{URL::to('/khambenh')}}">
 							<i class="fas fa-file-medical"></i>
-								<p>Khám bệnh({{($result_thongtin[0]->SoLanKham)}})</p>
+								<p>Khám chuyên khoa({{($result_thongtin[0]->SoLanKham)}})</p>
 							</a>
 						</li>
 						<li class="nav-item">

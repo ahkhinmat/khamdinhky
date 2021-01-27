@@ -24,19 +24,17 @@
             <div class="card card-stats card-round">
                 <div class="card-body ">
                     <div class="row align-items-center">
-                        <a  href="{{URL::to('/tuvan')}}">
-                            <div class="col-icon">
-                                <div class="icon-big text-center icon-primary bubble-shadow-small">
-                                    <i class="fas fa-users"></i>
-                                </div>
+                        <div class="col-icon">
+                            <div class="icon-big text-center icon-primary bubble-shadow-small">
+                                <i class="fas fa-users"></i>
                             </div>
-                            <div class="col col-stats ml-3 ml-sm-0">
-                                <div class="numbers">
-                                    <p class="card-category">Tư vấn</p>
-                                    {{-- <h4 class="card-title">{{$user_thongtin_chung[0]->SoLanHopDong}}</h4> --}}
-                                </div>
+                        </div>
+                        <div class="col col-stats ml-3 ml-sm-0">
+                            <div class="numbers">
+                                <p class="card-category">Lần khám định kỳ</p>
+                                <h4 class="card-title">{{$user_thongtin_chung[0]->SoLanHopDong}}</h4>
                             </div>
-                         </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -45,19 +43,17 @@
             <div class="card card-stats card-round">
                 <div class="card-body">
                     <div class="row align-items-center">
-                        <a href="{{URL::to('/khambenh')}}">
-                            <div class="col-icon">
-                                <div class="icon-big text-center icon-info bubble-shadow-small">
-                                    <i class="far fa-newspaper"></i>
-                                </div>
+                        <div class="col-icon">
+                            <div class="icon-big text-center icon-info bubble-shadow-small">
+                                <i class="far fa-newspaper"></i>
                             </div>
-                            <div class="col col-stats ml-3 ml-sm-0">
-                                <div class="numbers">
-                                    <p class="card-category">Khám chuyên khoa</p>
-                                    {{-- <h4 class="card-title">{{$user_thongtin_chung[0]->SoLanKham}}</h4> --}}
-                                </div>
+                        </div>
+                        <div class="col col-stats ml-3 ml-sm-0">
+                            <div class="numbers">
+                                <p class="card-category">Khám chuyên khoa</p>
+                                <h4 class="card-title">{{$user_thongtin_chung[0]->SoLanKham}}</h4>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>

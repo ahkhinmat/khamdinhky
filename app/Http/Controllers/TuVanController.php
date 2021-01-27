@@ -31,6 +31,7 @@ class TuVanController extends Controller
         //  ->orderby( 'HopDong_Id','desc')->get();
    
         $kq_xnbn=DB::select('call  get_tuvan (?)',array($BenhNhan_Id));
+
         if( $kq_xnbn){
             return view('pages.tuvan')->with('kq_xnbn',$kq_xnbn);
         }else{

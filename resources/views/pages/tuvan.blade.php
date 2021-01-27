@@ -28,7 +28,7 @@
                             <div class="numbers">
                                 <p class="card-category">Chiều cao</p>
                                 <h4 class="card-title">    
-                                    {{ ($kq_xnbn[0]->ChieuCao) }}cm
+                                    {{ ($kq_xnbn[0]->ChieuCao)??'' }}cm
                                     </h4>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                             <div class="numbers">
                                 <p class="card-category">Cân nặng</p>
                             <h4 class="card-title">    
-                                {{ ($kq_xnbn[0]->CanNang)}}kg
+                                {{ ($kq_xnbn[0]->CanNang)??''}}kg
                                 </h4>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                             <div class="numbers">
                                 <p class="card-category">BMI&nbsp;&nbsp;</p>
                                 <h4 class="card-title">    
-                                    {{ ($kq_xnbn[0]->BMI) }}
+                                    {{ ($kq_xnbn[0]->BMI)??'' }}
                                     </h4>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                         <div class="col col-stats ml-3 ml-sm-0">
                             <div class="numbers">
                                 <p class="card-category">Mạch</p>
-                                <h4 class="card-title"> {{ ($kq_xnbn[0]->Mach) }}</h4>
+                                <h4 class="card-title"> {{ ($kq_xnbn[0]->Mach)??'' }}</h4>
                             </div>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                         <div class="col col-stats ml-3 ml-sm-0">
                             <div class="numbers">
                                 <p class="card-category">Huyết Áp</p>
-                                <h4 class="card-title">    {{ $kq_xnbn[0]->HuyetAp }}</h4>
+                                <h4 class="card-title">    {{ $kq_xnbn[0]->HuyetAp ??''}}</h4>
 
                               
                             </div>
@@ -130,7 +130,7 @@
                         <div class="col col-stats ml-3 ml-sm-0">
                             <div class="numbers">
                                 <p class="card-category">Phân loại thể lực</p>
-                                <h4 class="card-title">Loại  {{ ($kq_xnbn[0]->PhanLoaiSucKhoe) }}</h4>
+                                <h4 class="card-title">Loại  {{ ($kq_xnbn[0]->PhanLoaiSucKhoe)??'' }}</h4>
                             </div>
                         </div>
                     </div>
@@ -141,8 +141,8 @@
     
   </div>
      
-    <div class="col-md-12"><strong> Tư vấn: </strong> {{ ($kq_xnbn[0]->KetLuan_Text) }}</div>
-    <div class="col-md-12"><strong>Bất thường: </strong> {{ ($kq_xnbn[0]->NhanXet_Text) }}</div>
-    <div class="col-md-12"><strong>Xếp loại:  {{ ($kq_xnbn[0]->XepLoai) }}</strong></div>
+    <div class="col-md-12"><strong> Tư vấn: </strong> {{ ($kq_xnbn[0]->KetLuan_Text)??'' }}</div>
+    <div class="col-md-12"><strong>Bất thường: </strong> {{ ($kq_xnbn[0]->NhanXet_Text)??'' }}</div>
+    <div class="col-md-12"><strong>Xếp loại:  {{ ($kq_xnbn[0]->XepLoai)??'' }}</strong></div>
 </div>
 @endsection

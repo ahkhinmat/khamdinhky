@@ -20,14 +20,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-6 col-md-2">
             <div class="card card-stats card-round">
                 <div class="card-body ">
                     <div class="row align-items-center">
                         <a  href="{{URL::to('/tuvan')}}">
                             <div class="col-icon">
-                                <div class="icon-big text-center icon-primary bubble-shadow-small">
-                                    <i class="fas fa-users"></i>
+                                <div class="icon-big text-center icon-success bubble-shadow-small">
+                                    <i class="la flaticon-chat-8"></i>
                                 </div>
                             </div>
                             <div class="col col-stats ml-3 ml-sm-0">
@@ -41,19 +41,19 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-6 col-md-2">
             <div class="card card-stats card-round">
                 <div class="card-body">
                     <div class="row align-items-center">
                         <a href="{{URL::to('/khambenh')}}">
                             <div class="col-icon">
-                                <div class="icon-big text-center icon-info bubble-shadow-small">
+                                <div class="icon-big text-center icon-success bubble-shadow-small">
                                     <i class="far fa-newspaper"></i>
                                 </div>
                             </div>
                             <div class="col col-stats ml-3 ml-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Khám chuyên khoa</p>
+                                    <p class="card-category">Chuyên khoa</p>
                                     {{-- <h4 class="card-title">{{$user_thongtin_chung[0]->SoLanKham}}</h4> --}}
                                 </div>
                             </div>
@@ -62,40 +62,65 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-6 col-md-2">
             <div class="card card-stats card-round">
                 <div class="card-body">
                     <div class="row align-items-center">
-                        <div class="col-icon">
-                            <div class="icon-big text-center icon-success bubble-shadow-small">
-                                <i class="far fa-chart-bar"></i>
+                        <a href="{{URL::to('/xetnghiem')}}">
+                            <div class="col-icon">
+                                <div class="icon-big text-center icon-success bubble-shadow-small">
+                                    <i class="far fa-chart-bar"></i>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col col-stats ml-3 ml-sm-0">
-                            <div class="numbers">
-                                <p class="card-category">Xét nghiệm</p>
-                                <h4 class="card-title">{{$user_thongtin_chung[0]->SoDvXn}}</h4>
+                            <div class="col col-stats ml-3 ml-sm-0">
+                                <div class="numbers">
+                                    <p class="card-category">Xét nghiệm</p>
+                                    {{-- <h4 class="card-title">{{$user_thongtin_chung[0]->SoDvXn}}</h4> --}}
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-6 col-md-2">
             <div class="card card-stats card-round">
                 <div class="card-body">
                     <div class="row align-items-center">
-                        <div class="col-icon">
-                            <div class="icon-big text-center icon-secondary bubble-shadow-small">
-                                <i class="far fa-check-circle"></i>
+                        <a href="{{URL::to('/chandoanhinhanh')}}">
+                            <div class="col-icon">
+                                <div class="icon-big text-center icon-success bubble-shadow-small">
+                                    <i class="flaticon-photo-camera"></i>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col col-stats ml-3 ml-sm-0">
-                            <div class="numbers">
-                                <p class="card-category">Chẩn đoán hình ảnh</p>
-                                <h4 class="card-title">{{$user_thongtin_chung[0]->SoDvCDHA}}</h4>
+                            <div class="col col-stats ml-3 ml-sm-0">
+                                <div class="numbers">
+                                    <p class="card-category">Hình ảnh</p>
+                                    {{-- <h4 class="card-title">{{$user_thongtin_chung[0]->SoDvCDHA}}</h4> --}}
+                                </div>
                             </div>
-                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-2">
+            <div class="card card-stats card-round">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <a href="{{URL::to('/thuoc')}}">
+                            <div class="col-icon">
+                                <div class="icon-big text-center icon-success bubble-shadow-small">
+                                    <i class="la flaticon-chain"></i>
+                                </div>
+                            </div>
+                            <div class="col col-stats ml-3 ml-sm-0">
+                                <div class="numbers">
+                                    <p class="card-category">Thuốc</p>
+                                    {{-- <h4 class="card-title">{{$user_thongtin_chung[0]->SoDvCDHA}}</h4> --}}
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -103,10 +128,8 @@
     </div>
     <div class="row">
     </div>
-    <div class="row row-card-no-pd">
-    </div>
-    <div class="row">
-    </div>
+ 
+ 
 
 </div>
 @endsection

@@ -9,8 +9,8 @@
             </button>
             <div class="dropdown-menu">
                 <div class="arrow"></div>
-                <a class="dropdown-item" href="{{URL::to('/khambenh')}}">Khám chuyên khoa</a>
                 <a class="dropdown-item"  href="{{URL::to('/tuvan')}}">Tư vấn</a>
+                <a class="dropdown-item" href="{{URL::to('/khambenh')}}">Khám chuyên khoa</a>
                 <a class="dropdown-item" href="{{URL::to('/xetnghiem')}}">Xét nghiệm</a>
                 <a class="dropdown-item" href="{{URL::to('/chandoanhinhanh')}}">Chẩn đoán hình ảnh</a>
                 <a class="dropdown-item" href="{{URL::to('/thuoc')}}">Thuốc</a>

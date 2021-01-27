@@ -88,7 +88,7 @@
                         </div>
                         <div class="col col-stats ml-3 ml-sm-0">
                             <div class="numbers">
-                                <p class="card-category">CD hình ảnh</p>
+                                <p class="card-category">Chẩn đoán hình ảnh</p>
                                 <h4 class="card-title">{{$user_thongtin_chung[0]->SoDvCDHA}}</h4>
                             </div>
                         </div>

@@ -10,7 +10,8 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Kết quả khám bệnh</h4>
+                <h4 class="page-title">KẾT QUẢ KHÁM BỆNH</h4>
+             
             </div>
             <div class="card-body">
                 <ul class="nav nav-pills nav-secondary" id="pills-tab" role="tablist">

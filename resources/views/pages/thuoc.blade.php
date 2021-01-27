@@ -2,7 +2,7 @@
 @section('content')
 <div class="page-inner">
     <div class="page-header">
-        <h4 class="page-title"> Toa thuốc</h4>
+        <h4 class="page-title"> TOA THUỐC</h4>
     </div>
     <div class="row">
       <div class="table-responsive table-wrapper ">

@@ -41,7 +41,7 @@
                         echo  ($mangMota[$x]."<br>");
                         }?>
                          </p>
-       {{--   bỏ khối comment  này để mở chức năng hiện hình ảnh            <?php
+                     <?php
                       if(!empty(json_decode($item->JsonKetqua)->{"Images"})){
                         ?>
                           <div id="carouselExampleIndicators{{ $item->Autoid}}" class="carousel slide mt-1" data-ride="carousel">
@@ -93,7 +93,6 @@
                          <?php  }
                         ?>    
                        
-                        bỏ khối comment  này để mở chức năng hiện hình ảnh  --}}
                         
                         <div>{{empty((json_decode($item->JsonKetqua)
                         ->{"KyThuat_ThuThuat"}[0]))?'':'Kỹ thuật: '.(json_decode($item->JsonKetqua)->{"KyThuat_ThuThuat"}[0])}}</div>
@@ -101,7 +100,7 @@
                         ->{"DeNghi_GhiChu"}[0]))?'':'Đề nghị: '.(json_decode($item->JsonKetqua)->{"DeNghi_GhiChu"}[0])}}</div>
                         <div>{{empty((json_decode($item->JsonKetqua)
                         ->{"KetLuan"}[0]))?'':'Kết luận: '.(json_decode($item->JsonKetqua)->{"KetLuan"}[0])}}</div>
-                 
+                        {{-- <div>Ngày kết quả : {{ date('d/m/y', strtotime($item->NgayKetQua))}}</div> --}}
                     </div>
 
 

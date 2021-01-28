@@ -119,7 +119,7 @@ class AdminController extends Controller
             if($value["SoDienThoai"]){
                 $matkhau_random=AdminController::randomPassword();
                 $noidung_sms= $noidung.'. Truy cap ket qua kham benh tai https://khamdinhky.hoanmydanang.com , tai khoan: '. $value['MaYte'].
-                ' mat khau: '. $matkhau_random;
+                ' mat khau:  '. $matkhau_random;
                 $ketqua=   AdminController::goitinnhan( $noidung_sms,AdminController::validateCellphone($value["SoDienThoai"]));
                 //ghi log kết quả gởi tin nhắn vào Database
                 $data=array();

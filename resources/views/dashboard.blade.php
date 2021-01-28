@@ -54,7 +54,7 @@
                             </div>
                             <div class="col col-stats ml-3 ml-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Chuyên khoa</p>
+                                    <p class="card-category">Khám chuyên khoa</p>
                                     {{-- <h4 class="card-title">{{$user_thongtin_chung[0]->SoLanKham}}</h4> --}}
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                             </div>
                             <div class="col col-stats ml-3 ml-sm-0">
                                 <div class="numbers">
-                                    <p class="card-category">Hình ảnh</p>
+                                    <p class="card-category">Chẩn đoán hình ảnh</p>
                                     {{-- <h4 class="card-title">{{$user_thongtin_chung[0]->SoDvCDHA}}</h4> --}}
                                 </div>
                             </div>

@@ -35,7 +35,8 @@
                         <div class="col-md-6">
                             <div class="form-group form-group-default">
                                 <label>Điện thoại</label>
-                            <input type="text" class="form-control" name="text" placeholder="text" value="{{$thongtin_lienhe[0]->Phone??'-'}}" disabled>
+                            {{-- <input type="text" class="form-control" name="text" placeholder="text" value="{{$thongtin_lienhe[0]->Phone??'-'}}" disabled> --}}
+                            <a href="{{$thongtin_lienhe[0]->Phone??'-'}}">{{$thongtin_lienhe[0]->Phone??'-'}}</a>
                             </div>
                         </div>
                     </div>

@@ -14,8 +14,9 @@
                 <a class="dropdown-item" href="{{URL::to('/xetnghiem')}}">Xét nghiệm</a>
                 <a class="dropdown-item" href="{{URL::to('/chandoanhinhanh')}}">Chẩn đoán hình ảnh</a>
                 <a class="dropdown-item" href="{{URL::to('/thuoc')}}">Thuốc</a>
+                <a class="dropdown-item" href="{{URL::to('/lienhe')}}">Liên hệ</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Liên hệ</a>
+              
             </div>
         </div>
     </div>

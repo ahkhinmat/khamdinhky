@@ -28,7 +28,7 @@
                     <div class="row mt-3">
                         <div class="col-md-6">
                             <div class="form-group form-group-default">
-                                <label>Người liên hẹ</label>
+                                <label>Người liên hệ</label>
                             <input type="text" class="form-control" name="name" placeholder="Name" value="{{$thongtin_lienhe[0]->TenLienHe??'-'}}" disabled>
                             </div>
                         </div>
@@ -68,14 +68,14 @@
                             </div>
                         </div>
                     </div> --}}
-                    <div class="row mt-3 mb-1">
+                    {{-- <div class="row mt-3 mb-1">
                         <div class="col-md-12">
                             <div class="form-group form-group-default">
                                 <label>Khác</label>
                                 <textarea class="form-control" name="about" placeholder="Thông tin khác" rows="3" disabled></textarea>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- <div class="text-right mt-3 mb-3">
                         <button class="btn btn-success">Save</button>
                         <button class="btn btn-danger">Reset</button>

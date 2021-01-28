@@ -81,6 +81,11 @@ class HomeController extends Controller
         // DB::table('ksk_users')->where('MaYte',$value['MaYte'])->update($data2);
         //  dd($request->user_password);
     }
+    public function lienhe(){
+        $thongtin_lienhe= DB::select('call get_lienhe');
+        //dd( $thongtin_lienhe);
+        return  view('pages.lienhe')->with('thongtin_lienhe', $thongtin_lienhe);
+    }
     public function logout(Request $request){
         Session::put('user_mayte',null);
         Session::put('user_id',null);

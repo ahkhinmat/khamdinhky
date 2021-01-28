@@ -226,16 +226,24 @@ $result_thongtin=Session::get('thongtin_chung');
 							<h4 class="text-section">Hệ thống</h4>
 						
 						</li>
-						<li class="nav-item">
+					
+						{{-- <li class="nav-item">
 							<a href="{{route('home.logout')}}">
-								<i class="fas fa-sign-out-alt"></i>
-								<p>Thoát</p>
+								<i class="fas fa-users-cog"></i>
+								<p>Admin</p>
+							</a>
+						</li> --}}
+					
+						<li class="nav-item">
+							<a href="{{route('home.lienhe')}}">
+								<i class="fas fa-phone-square"></i>
+								<p>Liên hệ</p>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="{{route('home.logout')}}">
-								<i class="fas fa-users-cog"></i>
-								<p>Admin</p>
+								<i class="fas fa-sign-out-alt"></i>
+								<p>Thoát</p>
 							</a>
 						</li>
 					</ul>

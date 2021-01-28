@@ -31,7 +31,7 @@ class HomeController extends Controller
 
        $user_mayte=$request->user_mayte;
        $user_password=($request->user_password);
-      $result=DB::select('call  get_login_infor (?,?)',array(  $user_mayte, $user_password));
+       $result=DB::select('call  get_login_infor (?,?)',array(  $user_mayte, $user_password));
        if($result){
             session_start();
             if($result[0]->MaYte=='admin'){
@@ -47,10 +47,17 @@ class HomeController extends Controller
                 Session::put('DiaChi',$result[0]->DiaChi);
                 Session::put('Gioi',$result[0]->Gioi);
                 Session::put('SoDienThoai',$result[0]->SoDienThoai);
-                $result_thongtin=DB::select('call  get_thongtinchung (?)',array($result[0]->BenhNhan_Id));
-                Session::put('thongtin_chung',$result_thongtin);
-                return view('dashboard')->with('user_info', $result[0])->with('user_thongtin_chung', $result_thongtin);
-            
+          
+                if($result[0]->DoiMatKhau==0){
+                    //return  Redirect::to('/changepass');
+                   return  view('changepass')->with('doimatkhau',$result[0]->DoiMatKhau);
+                    Session::put('message','Đây là lần đầu bạn đăng nhập vui lòng đổi mật khẩu');
+                }else{
+                    $result_thongtin=DB::select('call  get_thongtinchung (?)',array($result[0]->BenhNhan_Id));
+                    Session::put('thongtin_chung',$result_thongtin);
+                    return view('dashboard')->with('user_info', $result[0])->with('user_thongtin_chung', $result_thongtin);
+                }
+       
             }
        }
        else{
@@ -58,6 +65,21 @@ class HomeController extends Controller
            return  Redirect::to('/login');
        }
       
+    }
+    public function changepass(Request $request){
+        $result=DB::select('call  get_login_infor (?,?)',array( Session::get('user_mayte'), $request->user_password));
+        if($result){
+            $data=array();
+            $data['MatKhau']=$request->user_password_new;
+            $data['DoiMatKhau']=1;
+            DB::table('ksk_users')->where('MaYte',Session::get('user_mayte'))->update($data);
+            return view('dashboard');
+        }else{
+            return  view('changepass');
+            Session::put('message','Sai mật khẩu');
+        }
+        // DB::table('ksk_users')->where('MaYte',$value['MaYte'])->update($data2);
+        //  dd($request->user_password);
     }
     public function logout(Request $request){
         Session::put('user_mayte',null);

@@ -177,19 +177,19 @@ $result_thongtin=Session::get('thongtin_chung');
 						<li class="nav-item">
 						<a href="{{URL::to('/khambenh')}}">
 							<i class="fas fa-file-medical"></i>
-								<p>Khám chuyên khoa({{($result_thongtin[0]->SoLanKham)}})</p>
+								<p>Khám chuyên khoa({{($result_thongtin[0]->SoLanKham??'')}})</p>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="{{URL::to('/xetnghiem')}}">
 								<i class="fas fa-vial"></i>
-								<p>Xét nghiệm({{($result_thongtin[0]->SoDvXn)}})</p>
+								<p>Xét nghiệm({{($result_thongtin[0]->SoDvXn??'')}})</p>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="{{URL::to('/chandoanhinhanh')}}">
 								<i class="far fa-images"></i>
-								<p>Chẩn đoán hình ảnh({{($result_thongtin[0]->SoDvCDHA)}})</p>
+								<p>Chẩn đoán hình ảnh({{($result_thongtin[0]->SoDvCDHA??'')}})</p>
 								{{-- <span class="caret"></span> --}}
 							</a>
 							{{-- <div class="collapse" id="maps">

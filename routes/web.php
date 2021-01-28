@@ -20,6 +20,8 @@ Route::post('/dashboard', 'HomeController@postlogin');
 Route::get('/login', 'HomeController@login');
 Route::get('/logout', 'HomeController@logout')->name('home.logout');
 Route::get('/userprofile', 'HomeController@userprofile')->name('home.userprofile');
+Route::post('/changepass', 'HomeController@changepass');
+
 /* home */
 
 Route::get('/khambenh', 'KhamBenhController@index');

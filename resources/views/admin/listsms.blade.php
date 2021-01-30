@@ -83,8 +83,6 @@
                  });
                
                  var rowCount = ($('#table tr:last').index() + 1);
-                 //alert(rowCount);
-                 //$('#tableinfo').text( ($('#table tr:last').index() + 1));
                  checkedRows = [];
             });
         });

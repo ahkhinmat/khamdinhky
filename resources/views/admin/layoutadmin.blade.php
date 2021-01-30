@@ -32,34 +32,6 @@ $user_name=Session::get('user_name');
 <!-- jQuery Scrollbar -->
 <script src="{{asset('public/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
 
-<!-- Moment JS -->
-{{-- <script src="{{asset('public/assets/js/plugin/moment/moment.min.js')}}"></script> --}}
-
-<!-- Chart JS -->
-{{-- <script src="{{asset('public/assets/js/plugin/chart.js/chart.min.js')}}"></script> --}}
-
-<!-- jQuery Sparkline -->
-{{-- <script src="{{asset('public/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script> --}}
-
-<!-- Chart Circle -->
-
-
-<!-- Datatables -->
-
-
-<!-- Bootstrap Notify -->
-
-
-<!-- Bootstrap Toggle -->
-{{-- <script src="{{asset('public/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js')}}"></script> --}}
-
-<!-- jQuery Vector Maps -->
-
-
-<!-- Google Maps Plugin -->
-
-
-<!-- Sweet Alert -->
 
 <script src="{{asset('public/assets/js/plugin/sweetalert/sweetalert.min.js')}}"></script>
 <script src="{{asset('public/assets/js/plugin/Multi-column-Dropdown-Plugin-jQuery-Inputpicker/src/jquery.inputpicker.js')}}"></script>
@@ -232,6 +204,13 @@ $user_name=Session::get('user_name');
 								<p>Gởi tin nhắn</p>
 							</a>
 						</li>
+						<li class="nav-item">
+							<a  href="{{URL::to('/custum')}}">
+								<i class="fas fa-calendar"></i>
+								<p>Tùy chọn</p>
+							</a>
+						</li>
+
 
 					</ul>
 				</div>

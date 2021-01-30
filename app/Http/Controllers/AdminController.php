@@ -164,6 +164,9 @@ class AdminController extends Controller
             return  Redirect::to('login');
         }
     }
+    public function custum(){
+        return 'ok';
+    }
     public function index()
     { 
         return $this->AuthenLoginAdmin();

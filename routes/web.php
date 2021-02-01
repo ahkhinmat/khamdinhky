@@ -35,6 +35,7 @@ Route::get('/chandoanhinhanh', 'CDHAController@index');
 Route::get('/admin', 'AdminController@index');
 Route::get('/sendsms', 'AdminController@show_listsms');
 Route::get('/custum', 'AdminController@custum');
+Route::post('/custum', 'AdminController@custumedit');
 Route::get('/listhopdong', 'AdminController@show_listSMS_json');
 Route::get('/sendsms/benhnhan_byhopdong/{hopdong_id}', 'AdminController@show_benhnhan_byhopdong');
 Route::post('/sendSmsContent', 'AdminController@sendSmsContent');

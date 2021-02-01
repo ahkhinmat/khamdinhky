@@ -138,11 +138,12 @@ class AdminController extends Controller
                 DB::table('sms_log')->insert($data);
                   //ghi log kết quả gởi tin nhắn vào Database
                   
-                //cập nhật mật khẩu random vào DB
-                    // $data2=array();
+                //cập nhật mật khẩu random vào DB và set phải đổi mật khẩu lần đầu
+                    $data2=array();
                     // $data2['MatKhau']=$matkhau_random;
-                    // DB::table('ksk_users')->where('MaYte',$value['MaYte'])->update($data2);
-                //cập nhật mật khẩu random vào DB
+                    $data2['DoiMatKhau']=0;
+                    DB::table('ksk_users')->where('MaYte',$value['MaYte'])->update($data2);
+               // cập nhật mật khẩu random vào DB
                // echo(  $i.'-'.$value['MaYte'].' sodienthoai '.($value["SoDienThoai"]).'<br>') ;
             }else{
                 $data=array();
@@ -165,12 +166,22 @@ class AdminController extends Controller
         }
     }
     public function custum(){
-        return 'ok';
+        $thongtin_lienhe= DB::select('call get_lienhe');
+        return view('admin.custum')->with('thongtin_lienhe', $thongtin_lienhe);
+    }
+    public function custumedit(Request $request){
+        $data=array();
+        $data['Phone']=$request['Phone'];
+        $data['TenLienHe']=$request['TenLienHe'];
+        $data['NoiDung']=$request['NoiDung'];
+        DB::table('ksk_lienhe')->where('auto_id',1)->update($data);
+        $thongtin_lienhe= DB::select('call get_lienhe');
+        return view('admin.custum')->with('thongtin_lienhe', $thongtin_lienhe);
+  
     }
     public function index()
     { 
         return $this->AuthenLoginAdmin();
-        //return view('admin.layoutadmin');
     }
 
     /**

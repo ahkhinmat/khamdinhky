@@ -36,6 +36,7 @@ class HomeController extends Controller
             session_start();
             if($result[0]->MaYte=='admin'){
                 Session::put('user_id_admin',$result[0]->MaYte);
+                Session::put('MatKhauMacDinh',$result[0]->MatKhauMacDinh);
                 return view('admin.layoutadmin');
             }else{
                 Session::put('user_mayte',$result[0]->MaYte);

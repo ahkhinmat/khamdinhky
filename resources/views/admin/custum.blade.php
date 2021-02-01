@@ -48,6 +48,12 @@
                                     <input type="text" class="form-control" id="NoiDung" name="NoiDung" value="{{$thongtin_lienhe[0]->NoiDung??'-'}}" placeholder="Nội dung chuyên khoa" >
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="form-group form-group-default">
+                                        <label>Mật khẩu mặc định</label>
+                                    <input type="text" class="form-control" id="MatKhauMacDinh" name="MatKhauMacDinh" value="{{$thongtin_lienhe[0]->MatKhauMacDinh??'-'}}" placeholder="Mật khẩu mặc định" >
+                                    </div>
+                                </div>
                             </div>
                     </div>
                 </div>

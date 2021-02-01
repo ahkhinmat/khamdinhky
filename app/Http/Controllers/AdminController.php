@@ -140,7 +140,7 @@ class AdminController extends Controller
                   
                 //cập nhật mật khẩu random vào DB và set phải đổi mật khẩu lần đầu
                     $data2=array();
-                    // $data2['MatKhau']=$matkhau_random;
+                    $data2['MatKhau']='123';
                     $data2['DoiMatKhau']=0;
                     DB::table('ksk_users')->where('MaYte',$value['MaYte'])->update($data2);
                // cập nhật mật khẩu random vào DB
@@ -174,10 +174,10 @@ class AdminController extends Controller
         $data['Phone']=$request['Phone'];
         $data['TenLienHe']=$request['TenLienHe'];
         $data['NoiDung']=$request['NoiDung'];
+        $data['MatKhauMacDinh']=$request['MatKhauMacDinh'];
         DB::table('ksk_lienhe')->where('auto_id',1)->update($data);
         $thongtin_lienhe= DB::select('call get_lienhe');
         return view('admin.custum')->with('thongtin_lienhe', $thongtin_lienhe);
-  
     }
     public function index()
     { 

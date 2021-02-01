@@ -175,7 +175,11 @@ class AdminController extends Controller
         $data['TenLienHe']=$request['TenLienHe'];
         $data['NoiDung']=$request['NoiDung'];
         $data['MatKhauMacDinh']=$request['MatKhauMacDinh'];
+       
         DB::table('ksk_lienhe')->where('auto_id',1)->update($data);
+
+        Session::put('MatKhauMacDinh',$request['MatKhauMacDinh']);
+        
         $thongtin_lienhe= DB::select('call get_lienhe');
         return view('admin.custum')->with('thongtin_lienhe', $thongtin_lienhe);
     }

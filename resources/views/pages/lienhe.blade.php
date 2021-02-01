@@ -46,12 +46,12 @@
                             <input type="text" class="form-control" id="datepicker" name="datepicker" value="{{$thongtin_lienhe[0]->NoiDung??'-'}}" placeholder="Ngày sinh" disabled>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        {{-- <div class="col-md-4">
                             <div class="form-group form-group-default">
                                 <label>Mật khẩu mặc định</label>
-                            <input type="text" class="form-control" id="datepicker" name="datepicker" value="{{$thongtin_lienhe[0]->NoiDung??'-'}}" placeholder="Ngày sinh" disabled>
+                            <input type="text" class="form-control" id="datepicker" name="datepicker" value="{{$thongtin_lienhe[0]->MatKhauMacDinh??'-'}}" placeholder="Ngày sinh" disabled>
                             </div>
-                        </div>
+                        </div> --}}
                         {{-- <div class="col-md-4">
                             <div class="form-group form-group-default">
                                 <label>Vị trí</label>

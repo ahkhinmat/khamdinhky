@@ -42,8 +42,8 @@
                     <button id="sendSms" class="btn btn-success" type="submit" >
                         <i class="fab fa-telegram-plane"></i> Gởi tin nhắn
                     </button>
-                    <label  name="tableinfo" id="tableinfo">0<label
-                </div>
+                    <label  name="noti" id="noti">Mật khẩu về mặc định khi gởi SMS. <label>
+                    <label  name="tableinfo" id="tableinfo">0<label>
             </div>
         </div>
       </div>

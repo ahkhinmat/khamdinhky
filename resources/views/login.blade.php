@@ -6,8 +6,8 @@
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 
 	<!-- Fonts and icons -->
-    <script src="{{asset('public/assets/js/plugin/webfont/webfont.min.js')}}"></script>
-    <link rel="icon" href="{{asset('public/assets/img/logo-hmdn.png')}}" sizes="20x20" type="image/png">
+    <script src="{{asset('assets/js/plugin/webfont/webfont.min.js')}}"></script>
+    <link rel="icon" href="{{asset('assets/img/logo-hmdn.png')}}" sizes="20x20" type="image/png">
 	<script>
 		WebFont.load({
 			google: {"families":["Open+Sans:300,400,600,700"]},
@@ -19,16 +19,16 @@
 	</script>
 
 	<!-- CSS Files -->
-	<link rel="stylesheet" href="{{asset('public/assets/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/assets/css/azzara.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/assets/css/style.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/azzara.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 </head>
 <body class="login">
     <form action="{{URL::TO('/dashboard')}}" method="post">
         {{ csrf_field() }}
         <div class="wrapper wrapper-login">
             <div class="container container-login animated fadeIn">
-                <img src="{{asset('public/assets/img/logohmdn.png')}}" alt="..." class="avatar-img rounded-circle logo">
+                <img src="{{asset('assets/img/logohmdn.png')}}" alt="..." class="avatar-img rounded-circle logo">
                 <h1 class="h3 mb-3 font-weight-normal text-center">Khám Sức Khỏe Định Kỳ</h1>
                 {{-- <h3 class="text-center">Đăng nhập</h3> --}}
                 <?php
@@ -68,10 +68,10 @@
 
         </div>
     </form>
-	<script src="{{asset('public/assets/js/core/jquery.3.2.1.min.js')}}"></script>
-	<script src="{{asset('public/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
-	<script src="{{asset('public/assets/js/core/popper.min.js')}}"></script>
-	<script src="{{asset('public/assets/js/core/bootstrap.min.js')}}"></script>
-	<script src="{{asset('public/assets/js/ready.js')}}"></script>
+	<script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}"></script>
+	<script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
+	<script src="{{asset('assets/js/core/popper.min.js')}}"></script>
+	<script src="{{asset('assets/js/core/bootstrap.min.js')}}"></script>
+	<script src="{{asset('assets/js/ready.js')}}"></script>
 </body>
 </html>

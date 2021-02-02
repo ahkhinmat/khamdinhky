@@ -9,16 +9,16 @@ $result_thongtin=Session::get('thongtin_chung');
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Cổng bệnh án khám định kỳ Bệnh viện Hoàn Mỹ Đà Nẵng</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	{{-- <link href="{{asset('public/frontend/css/prettyPhoto.css')}}" rel="stylesheet"> --}}
-{{-- <link rel="icon" href="{{asset('public/assets/img/favicon.ico')}}" type="image/x-icon"/> --}}
-<link rel="icon" href="{{asset('public/assets/img/logo-hmdn.png')}}" sizes="20x20" type="image/png">
+	{{-- <link href="{{asset('frontend/css/prettyPhoto.css')}}" rel="stylesheet"> --}}
+{{-- <link rel="icon" href="{{asset('assets/img/favicon.ico')}}" type="image/x-icon"/> --}}
+<link rel="icon" href="{{asset('assets/img/logo-hmdn.png')}}" sizes="20x20" type="image/png">
 
 	<!-- Fonts and icons -->
-	<script src="{{asset('public/assets/js/plugin/webfont/webfont.min.js')}}"></script>
+	<script src="{{asset('assets/js/plugin/webfont/webfont.min.js')}}"></script>
 	<script>
 		WebFont.load({
 			google: {"families":["Open+Sans:300,400,600,700"]},
-			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['public/assets/css/fonts.css']},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['assets/css/fonts.css']},
 			active: function() {
 				sessionStorage.fonts = true;
 			}
@@ -26,12 +26,12 @@ $result_thongtin=Session::get('thongtin_chung');
 	</script>
 
 	<!-- CSS Files -->
-	<link rel="stylesheet" href="{{asset('public/assets/css/style.css')}}">
-	<link rel="stylesheet" href="{{asset('public/assets/css/bootstrap.min.css')}}">
-	<link rel="stylesheet" href="{{asset('public/assets/css/azzara.min.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/css/azzara.min.css')}}">
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="{{asset('public/assets/css/demo.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/css/demo.css')}}">
 </head>
 <body>
 	<div class="wrapper">
@@ -42,7 +42,7 @@ $result_thongtin=Session::get('thongtin_chung');
 			<!-- Logo Header -->
 			<div class="logo-header">
 				<a href="dashboard" class="logo">
-				<img src="{{asset('public/assets/img/logohmdn.png')}}" alt="..." class="avatar-img rounded-circle logo">
+				<img src="{{asset('assets/img/logohmdn.png')}}" alt="..." class="avatar-img rounded-circle logo">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -84,13 +84,13 @@ $result_thongtin=Session::get('thongtin_chung');
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="{{('public/assets/img/avata_user.png')}}" alt="..." class="avatar-img rounded-circle">
+									<img src="{{('assets/img/avata_user.png')}}" alt="..." class="avatar-img rounded-circle">
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<li>
 									<div class="user-box">
-										<div class="avatar-lg"><img src="{{('public/assets/img/avata_user.png')}}" alt="image profile" class="avatar-img rounded"></div>
+										<div class="avatar-lg"><img src="{{('assets/img/avata_user.png')}}" alt="image profile" class="avatar-img rounded"></div>
 										<div class="u-text">
 										<h4>{{$user_name}}</h4>
 											{{-- <p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a> --}}
@@ -120,7 +120,7 @@ $result_thongtin=Session::get('thongtin_chung');
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
 						
-							<img src="{{('public/assets/img/avata_user.png')}}" alt="..." class="avatar-img rounded-circle">
+							<img src="{{('assets/img/avata_user.png')}}" alt="..." class="avatar-img rounded-circle">
 						</div>
 						
 						<div class="info">
@@ -294,53 +294,53 @@ $result_thongtin=Session::get('thongtin_chung');
 	</div>
 </div>
 <!--   Core JS Files   -->
-<script src="{{asset('public/assets/js/core/jquery.3.2.1.min.js')}}"></script>
-<script src="{{asset('public/assets/js/core/popper.min.js')}}"></script>
-<script src="{{asset('public/assets/js/core/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/js/core/jquery.3.2.1.min.js')}}"></script>
+<script src="{{asset('assets/js/core/popper.min.js')}}"></script>
+<script src="{{asset('assets/js/core/bootstrap.min.js')}}"></script>
 
 <!-- jQuery UI -->
-<script src="{{asset('public/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
-<script src="{{asset('public/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js')}}"></script>
 
 <!-- jQuery Scrollbar -->
-<script src="{{asset('public/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js')}}"></script>
 
 <!-- Moment JS -->
-<script src="{{asset('public/assets/js/plugin/moment/moment.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin/moment/moment.min.js')}}"></script>
 
 <!-- Chart JS -->
-<script src="{{asset('public/assets/js/plugin/chart.js/chart.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin/chart.js/chart.min.js')}}"></script>
 
 <!-- jQuery Sparkline -->
-<script src="{{asset('public/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js')}}"></script>
 
 <!-- Chart Circle -->
-<script src="{{asset('public/assets/js/plugin/chart-circle/circles.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin/chart-circle/circles.min.js')}}"></script>
 
 <!-- Datatables -->
-<script src="{{asset('public/assets/js/plugin/datatables/datatables.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin/datatables/datatables.min.js')}}"></script>
 
 <!-- Bootstrap Notify -->
-<script src="{{asset('public/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
 
 <!-- Bootstrap Toggle -->
-<script src="{{asset('public/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js')}}"></script>
 
 <!-- jQuery Vector Maps -->
-<script src="{{asset('public/assets/js/plugin/jqvmap/jquery.vmap.min.js')}}"></script>
-<script src="{{asset('public/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js')}}"></script>
+<script src="{{asset('assets/js/plugin/jqvmap/jquery.vmap.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin/jqvmap/maps/jquery.vmap.world.js')}}"></script>
 
 <!-- Google Maps Plugin -->
-<script src="{{asset('public/assets/js/plugin/gmaps/gmaps.js')}}"></script>
+<script src="{{asset('assets/js/plugin/gmaps/gmaps.js')}}"></script>
 
 <!-- Sweet Alert -->
-<script src="{{asset('public/assets/js/plugin/sweetalert/sweetalert.min.js')}}"></script>
+<script src="{{asset('assets/js/plugin/sweetalert/sweetalert.min.js')}}"></script>
 
 <!-- Azzara JS -->
-<script src="{{asset('public/assets/js/ready.min.js')}}"></script>
+<script src="{{asset('assets/js/ready.min.js')}}"></script>
 
 <!-- Azzara DEMO methods, don't include it in your project! -->
-<script src="{{asset('public/assets/js/setting-demo.js')}}"></script>
-<script src="{{asset('public/assets/js/demo.js')}}"></script>
+<script src="{{asset('assets/js/setting-demo.js')}}"></script>
+<script src="{{asset('assets/js/demo.js')}}"></script>
 </body>
 </html>

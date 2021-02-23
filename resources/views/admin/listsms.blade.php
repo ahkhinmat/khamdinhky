@@ -68,9 +68,10 @@
                 fields:[
                     {name:'value',text:'Id'},
                     {name:'text',text:'Tên công ty'},
-                    {name:'So_HD',text:'Số HĐ'}
+                    {name:'So_HD',text:'Số HĐ'},
+                    {name:'NgayHieuLuc_HD',text:'Ngày hiệu lực'}
                 ],
-                headShow: false,
+                headShow: true,
                 fieldText : 'text',
                 fieldValue: 'value',
                 filterOpen: true

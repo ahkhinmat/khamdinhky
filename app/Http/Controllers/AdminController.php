@@ -113,13 +113,28 @@ class AdminController extends Controller
         $matkhau_random='';
         $noidung=$request['noidungSms'];
         $hopdong_id=$request['hopdong_id'];
+        $tuybiensms=false;
+        $resetpass=false;
+        if($request['resetpass']){
+            $resetpass=true;
+        }
+        if($request['tuybiensms']){
+            $tuybiensms=true;
+        }
+        //dd('tuybiensms '.$tuybiensms.'   resetpass'.$resetpass);
         $i=0;
         foreach ($request['listPhone'] as $value) {
            $i++;
             if($value["SoDienThoai"]){
                 $matkhau_random=AdminController::randomPassword();
-                $noidung_sms= $noidung.'. Truy cap ket qua kham suc khoe tai https://khamdinhky.hoanmydanang.com , tai khoan: '. $value['MaYte'].
-                ' mat khau:   '.Session::get('MatKhauMacDinh');
+                $noidung_sms='';
+                if($tuybiensms){ 
+                     $noidung_sms=$noidung;
+                }
+                else{
+                    $noidung_sms= $noidung.'. Truy cap ket qua kham suc khoe tai https://khamdinhky.hoanmydanang.com , tai khoan: '. $value['MaYte'].       ' mat khau:   '.Session::get('MatKhauMacDinh');
+                }
+       // dd(noidung_sms);
                 $ketqua=   AdminController::goitinnhan( $noidung_sms,AdminController::validateCellphone($value["SoDienThoai"]));
                 //ghi log kết quả gởi tin nhắn vào Database
                 $data=array();
@@ -139,10 +154,12 @@ class AdminController extends Controller
                   //ghi log kết quả gởi tin nhắn vào Database
                   
                 //cập nhật mật khẩu random vào DB và set phải đổi mật khẩu lần đầu
+                if($resetpass){
                     $data2=array();
                     $data2['MatKhau']=Session::get('MatKhauMacDinh');
                     $data2['DoiMatKhau']=0;
                     DB::table('ksk_users')->where('MaYte',$value['MaYte'])->update($data2);
+                }
                // cập nhật mật khẩu random vào DB
                // echo(  $i.'-'.$value['MaYte'].' sodienthoai '.($value["SoDienThoai"]).'<br>') ;
             }else{

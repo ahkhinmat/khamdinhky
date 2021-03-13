@@ -40,9 +40,13 @@
                 </table>
                 <div id="toolbar">
                     <button id="sendSms" class="btn btn-success" type="submit" >
-                        <i class="fab fa-telegram-plane"></i> Gởi tin nhắn
+                        <i class="fab fa-telegram-plane"></i> Gởi SMS
                     </button>
-                    <label  name="noti" id="noti">Mật khẩu về mặc định khi gởi SMS. <label>
+                    Reset mật khẩu<input type="checkbox" name="resetpass" id="resetpass" checked> 
+                    <label  name="" id="">        .       <label>
+                    Tùy biến tin nhắn<input type="checkbox" name="tuybiensms" id="tuybiensms" >
+                
+                    {{-- <label  name="noti" id="noti">Mật khẩu về mặc định khi gởi SMS. <label> --}}
                     <label  name="tableinfo" id="tableinfo">0<label>
             </div>
         </div>
@@ -96,6 +100,9 @@
     $('#sendSms').click(function(){
       
       var noidungSms=$('#smscontent').val();
+      var tuybiensms = $('#tuybiensms:checked').val();
+      var resetpass = $('#resetpass:checked').val();
+      
       if(noidungSms!=''){
         if(checkedRows.length==0){
                     alert('Hãy tic chọn tin nhắn tất cả');
@@ -112,7 +119,8 @@
                     type: "POST",
                     datatype: 'JSON',
                     url: 'sendSmsContent',
-                    data: { 'listPhone':checkedRows,'noidungSms':noidungSms,'hopdong_id':_hopdong_id},
+                    data: { 'listPhone':checkedRows,'noidungSms':noidungSms,'hopdong_id':_hopdong_id,
+                    'resetpass':resetpass,'tuybiensms':tuybiensms},
                     success:  function(data, status, xhr) {
                           $table.bootstrapTable('refresh', {
                           url: document.URL+ '/benhnhan_byhopdong/'+_hopdong_id+'?hopdong_id'
@@ -217,7 +225,7 @@
           
           {
             field: 'TenBenhNhan',
-            title: 'Họ tên BN',
+            title: 'Họ tên',
             sortable: true,
             footerFormatter: totalNameFormatter,
             align: 'left',
@@ -242,7 +250,7 @@
           },
           {
             field: 'GoiThanhCong',
-            title: 'Gởi thành công',
+            title: 'Thành công',
             align: 'left',
             clickToSelect: false,
             footerFormatter: '',
@@ -256,16 +264,23 @@
           //   clickToSelect: false,
           //   footerFormatter: '',
           // },
+          // {
+          //   field: 'GoiLanCuoi',
+          //   title: 'Gởi lần cuối',
+          //   align: 'left',
+          //   clickToSelect: false,
+          //   footerFormatter: '',
+          // },
           {
-            field: 'GoiLanCuoi',
-            title: 'Gởi lần cuối',
+            field: 'TrangThaiSms',
+            title: 'Kết quả cuối',
             align: 'left',
             clickToSelect: false,
             footerFormatter: '',
           },
           {
-            field: 'TrangThaiSms',
-            title: 'Kết quả cuối',
+            field: 'KetQuaKB',
+            title: 'KQ KSK',
             align: 'left',
             clickToSelect: false,
             footerFormatter: '',

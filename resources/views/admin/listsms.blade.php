@@ -24,7 +24,7 @@
                     <table id="table" 
                     data-toolbar="#toolbar"
                     data-search="true"
-                    {{-- data-show-refresh="true" --}}
+
                     data-show-toggle="true"
                     data-show-fullscreen="true"
                     data-show-columns="true"
@@ -37,7 +37,9 @@
                     data-show-footer="false"
                     data-id-field="MaYte"
                     >
+
                 </table>
+
                 <div id="toolbar">
                     <button id="sendSms" class="btn btn-success" type="submit" >
                         <i class="fab fa-telegram-plane"></i> Gởi SMS
@@ -208,17 +210,16 @@
             {
             field: 'state',
             checkbox: true,
-           // rowspan: 2,
+              width:3,
             align: 'center',
-            footerFormatter: '',
-            width: 1,
+    
+         
           },
             {
             title: 'Mã Y Tế',
             field: 'MaYte',
-          //  rowspan: 2,
+            width:20,
             align: 'left',
-          //  valign: 'middle',
             sortable: true,
             footerFormatter: totalTextFormatter
           },
@@ -226,25 +227,28 @@
           {
             field: 'TenBenhNhan',
             title: 'Họ tên',
+            width:400,
             sortable: true,
-            footerFormatter: totalNameFormatter,
+           // footerFormatter: totalNameFormatter,
             align: 'left',
-            width: 25,
+       
           }, {
             field: 'NamSinh',
-            title: 'Năm sinh',
+            title: 'N.sinh',
             sortable: true,
+            width:10,
             align: 'left',
-            footerFormatter: '',
-            width: 5,
+
+           
           },
           {
             field: 'SoDienThoai',
             title: 'Điện thoại',
+            width:10,
             align: 'left',
-            clickToSelect: false,
-            footerFormatter: '',
-            width: 5,
+
+
+
            // events: window.operateEvents,
           //  formatter: operateFormatter
           },
@@ -252,8 +256,8 @@
             field: 'GoiThanhCong',
             title: 'Thành công',
             align: 'left',
-            clickToSelect: false,
-            footerFormatter: '',
+            width:5,
+
            // events: window.operateEvents,
           //  formatter: operateFormatter
           },
@@ -275,16 +279,17 @@
             field: 'TrangThaiSms',
             title: 'Kết quả cuối',
             align: 'left',
-            clickToSelect: false,
-            footerFormatter: '',
+            width:10,
+       
+
           },
-          {
-            field: 'KetQuaKB',
-            title: 'KQ KSK',
-            align: 'left',
-            clickToSelect: false,
-            footerFormatter: '',
-          },
+          // {
+          //   field: 'KetQuaKB',
+          //   title: 'KQ KSK',
+          //   align: 'left',
+          //   clickToSelect: false,
+          //   footerFormatter: '',
+          // },
         
         ]
       });

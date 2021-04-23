@@ -16,6 +16,10 @@
 				sessionStorage.fonts = true;
 			}
 		});
+
+        var url = new URL(url_string);
+        var c = url.searchParams.get("username");
+      
 	</script>
 
 	<!-- CSS Files -->
@@ -73,5 +77,16 @@
 	<script src="{{secure_asset('assets/js/core/popper.min.js')}}"></script>
 	<script src="{{secure_asset('assets/js/core/bootstrap.min.js')}}"></script>
 	<script src="{{secure_asset('assets/js/ready.js')}}"></script>
+    <script type="text/javascript">
+        var url=window.location.href;
+        var urln = new URL(url);
+        var username = urln.searchParams.get("username");
+      
+        $(document).ready(function() {
+            $("#user_mayte").val(username);
+        });
+    </script>
+
+    
 </body>
 </html>

@@ -84,6 +84,7 @@
       
         $(document).ready(function() {
             $("#user_mayte").val(username);
+            $("#user_password").focus();
         });
     </script>
 

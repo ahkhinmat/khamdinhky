@@ -132,7 +132,7 @@ class AdminController extends Controller
                      $noidung_sms=$noidung;
                 }
                 else{
-                    $noidung_sms= $noidung.'. Truy cap ket qua kham suc khoe tai https://khamdinhky.hoanmydanang.com , tai khoan: '. $value['MaYte'].       ' mat khau:   '.Session::get('MatKhauMacDinh');
+                    $noidung_sms= $noidung.'. Truy cap ket qua kham suc khoe tai https://khamdinhky.hoanmydanang.com/login?username='.$value['MaYte'].' , tai khoan: '. $value['MaYte'].       ' mat khau:   '.Session::get('MatKhauMacDinh');
                 }
        // dd(noidung_sms);
                 $ketqua=   AdminController::goitinnhan( $noidung_sms,AdminController::validateCellphone($value["SoDienThoai"]));

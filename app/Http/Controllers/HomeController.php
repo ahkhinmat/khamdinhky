@@ -28,7 +28,6 @@ class HomeController extends Controller
         return  view('login');
     }
     public function postlogin(Request $request){
-
        $user_mayte=$request->user_mayte;
        $user_password=($request->user_password);
        $result=DB::select('call  get_login_infor (?,?)',array(  $user_mayte, $user_password));

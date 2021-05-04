@@ -34,13 +34,17 @@
                     @foreach ($kq_cdha as $item)
                 <div class="tab-pane fade show " id="pills-{{ $item->Autoid}}" role="tabpanel" aria-labelledby="pills-{{$item->Autoid}}-tab">
                     <h3 style=" color:rgb(8, 99, 18)">{{$item->TenDichVu}} ngày {{ date('d/m/y', strtotime($item->NgayKetQua))}}</h3>
-                        <p><?php
-                        $mangMota = json_decode($item->JsonKetqua)->{"MoTa"};
-                        $count=count ($mangMota);
-                        for ($x = 0; $x  < $count; $x++) {
-                        echo  ($mangMota[$x]."<br>");
-                        }?>
-                         </p>
+                      <p><?php
+                        //$mangMota = json_decode($item->JsonKetqua)->{"MoTa"};
+                        if(!empty(json_decode($item->JsonKetqua)->{"MoTa"})){
+                          $mangMota = json_decode($item->JsonKetqua)->{"MoTa"};
+                          $count=count($mangMota);
+                          for ($x = 0; $x  < $count; $x++) {
+                          echo  ($mangMota[$x]."<br>");
+                          }
+                        }
+                        ?>
+                      </p>
        {{--   bỏ khối comment  này để mở chức năng hiện hình ảnh            <?php
                       if(!empty(json_decode($item->JsonKetqua)->{"Images"})){
                         ?>

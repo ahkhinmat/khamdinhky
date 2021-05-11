@@ -30,19 +30,19 @@
                 <div class="tab-pane fade show " id="pills-{{ $item->Autoid}}" role="tabpanel" aria-labelledby="pills-{{$item->Autoid}}-tab">
                     <h3 style=" color:blue">{{$item->TenDichVu}} (ngày {{ date('d/m/y', strtotime($item->NgayKetQua))}})</h3>
                         <p>
-                            {{-- {{dd(json_decode($item->JsonKetqua)->dataKQ)}} --}}
+                            
                             <?php
-                        $mangMota =  json_decode($item->JsonKetqua)->dataKQ;
-                        $count=count($mangMota);
-                        foreach ($mangMota as $value) {
-                               //echo( $value->NoiDungKham. "  ".(empty($value->Kham)?'--':' '.($value->Kham)));
-                                echo ("<strong>".$value->NoiDungKham."</strong>");
-                                echo (empty($value->Kham)?'--':' '."<i>".($value->Kham)."</i>"."<br>");
-                              //  echo  ($value->KetLuan."<br>");
-                               
+                        if(!empty(json_decode($item->JsonKetqua)->{"dataKQ"})){
+                            $mangMota = json_decode($item->JsonKetqua)->{"dataKQ"};
+                            $count=count($mangMota);
+                            foreach ($mangMota as $value) {
+                                //echo( $value->NoiDungKham. "  ".(empty($value->Kham)?'--':' '.($value->Kham)));
+                                    echo ("<strong>".$value->NoiDungKham."</strong>");
+                                    echo (empty($value->Kham)?'--':' '."<i>".($value->Kham)."</i>"."<br>");
+                                //  echo  ($value->KetLuan."<br>");
 
-             
-                        }
+                            }
+                          }
                   
                   
                         // for ($x = 0; $x  < $count; $x++) {
